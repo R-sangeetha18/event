@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funner Events</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <style>
+        
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #fff;
+}
+
+header {
+    
+    background-color:#3D0A2F; /* Deep purple */
+    color: white;
+    padding: 10px 0;
+    border-radius: 15px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 80px; /* Adjust as needed */
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+ .nav-links .active{
+    color: #25D366;
+}
+.active:hover{
+    color: red;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.search-bar button {
+    background-color: #ffd700; /* Gold-like color */
+    color: #4b0082;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ .site-footer {
+    background-color: #3D0A2F; /* Light blue background as seen in the image */
+    color: white; /* Darker text for readability */
+    padding: 40px 20px;
+    margin-top: auto; /* Pushes the footer to the bottom */
+ border: #5d2b5c;
+  border-radius: 15px;
+  height: fit-content;
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to wrap on smaller screens */
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+ 
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+   
+}
+
+.footer-section {
+    flex: 1; /* Allows sections to grow and shrink */
+    min-width: 200px; /* Minimum width before wrapping */
+    margin: 15px;
+}
+
+.footer-sections p, li{
+    font-size: large;
+}
+
+
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a,
+.footer-section p a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+}
+
+.footer-section ul li a:hover,
+.footer-section p a:hover {
+    color: #007bff; /* Hover effect for links */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 2em;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff; /* Hover effect for social icons */
+}
+.whatsapp { color: #25D366; }
+.youtube { color: #FF0000; }
+.instagram { color: #C13584; }
+.facebook { color: #3B5998; }
+
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+.img{
+    margin-top: 5%;
+    margin-bottom: 5%;
+    max-width: 1200px;
+   
+    margin-left: 10%;
+}
+ .container {
+            display: flex;
+            background-color: #fff;
+            padding: 40px;
+            border-radius: 8px;
+           
+            max-width: 1200px;
+            width: 100%;
+            flex-wrap: wrap; /* Allows wrapping on smaller screens */
+        margin-left: 10%;
+        }
+
+        .left-text {
+            flex: 1;
+            padding-right: 40px;
+            display: flex;
+            align-items: center; /* Vertically center the text */
+            min-width: 300px; /* Minimum width for the text section */
+            box-sizing: border-box;
+        }
+
+        .left-text p {
+            font-family: 'Playfair Display', serif; /* Use a script-like font for the text */
+            font-style: italic;
+            font-size: 1.5em;
+            color: #5d3f6a; /* Purple color similar to the image */
+            line-height: 1.4;
+        }
+
+        .contact-form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-width: 300px; /* Minimum width for the form section */
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .contact-form label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: calc(100% - 20px); /* Account for padding */
+            padding: 10px;
+            border: 3px solid #3D0A2F;
+            border-radius: 15px;
+            font-size: 1em;
+            box-sizing: border-box; /* Include padding in width */
+        }
+
+        .contact-form textarea {
+            resize: vertical; /* Allow vertical resizing */
+            min-height: 100px;
+        }
+
+        .captcha-container {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .captcha-container input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+
+        .captcha-container label {
+            font-weight: normal;
+            margin-bottom: 0;
+            color: #333;
+        }
+
+        .contact-form button {
+            background-color: #5d3f6a; /* Purple color */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-top: 20px;
+        }
+
+        .contact-form button:hover {
+            background-color: #4a3355; /* Slightly darker purple on hover */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .left-text {
+                padding-right: 0;
+                margin-bottom: 30px;
+                text-align: center;
+            }
+        }
+        .containers {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
+    width: 100%;
+    max-width: 1200px;
+    background-color: #fff;
+   
+    padding: 20px;
+    box-sizing: border-box;
+    margin-left: 10%;
+}
+
+ h1 {
+    color: #3D0A2F;
+    text-align: center;
+    width: 100%; /* Occupy full width */
+    margin-top: 100px;
+}
+
+.contact-info {
+    flex: 1; /* Take up available space */
+    padding-right: 20px;
+    line-height: 1.6;
+    min-width: 250px; /* Minimum width before wrapping */
+    
+}
+
+.contact-info p {
+    margin: 5px ;
+    color: #333;
+    margin-left: 50px;
+    font-size: larger;
+    
+}
+
+.map-section {
+    flex: 2; /* Take up more space than contact info */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 300px; /* Minimum width before wrapping */
+    margin-left: 30%;
+}
+
+.map-section iframe {
+    width: 100%;
+    height: 400px; /* Adjust height as needed */
+    border: none;
+}
+
+.get-direction-btn {
+    background-color: #5a2d5a; /* Purple color from image */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .contact-info, .map-section {
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+}
+</style>
+</head>
+<body>
+  <header>
+        <nav class="navbar">
+            <div class="logo">
+                 <img src="images/logo.png" alt="logo" >
+                
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="events.html" >Events</a></li>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="vender.html" >Become a Vendor</a></li>
+                <li><a href="contact.html"class="active">Contact Us</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            <i class="fas fa-search"></i>
+            </div>
+            <div class="icons">
+              <a href="profile.html" style="color: white;">   <i class="fas fa-user-circle"></i></a>
+            </div>
+        </nav>
+        </header>
+          <div class="img">
+                <img src="images/depositphotos_75818865-stock-photo-web-contact-us-concept.jpg" width="1200px" height="400px">
+            </div>
+             <center><h1 style="color: #3D0A2F;">Contact Us</h1></center>
+             <div class="container">
+               
+        <div class="left-text">
+            <p>Fill out this form and a member of our support team will 
+            <b style="color: #3B5998;">contact you in 24 hours</b></p>
+        </div>
+        <form class="contact-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E mail</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile No</label>
+                <input type="text" id="mobile" name="mobile">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="captcha-container">
+                <input type="checkbox" id="not-a-robot" required>
+                <label for="not-a-robot">I Am Not a Robot</label>
+                <!-- CAPTCHA icon/widget placeholder -->
+                <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+            </div>
+            <button type="submit">CONTACT US</button>
+        </form>
+    </div>
+    <div class="containers">
+       
+            
+    
+
+        <section class="contact-info">
+            <h1 style="border-bottom: 3px solid gray;">OUR OFFICE</h1>
+            
+            <p>E-mail - funnerevent.in</p>
+            <p>Contact - +91 9865321470</p>
+            <p>21, Amman Nagar,</p>
+            <p>RMK Road,</p>
+            <p>Karur-26</p>
+        </section>
+
+        <section class="map-section">
+            <!-- Replace the src with your actual Google Maps embed URL -->
+            <img src="images/unnamed.jpg">
+            <button class="get-direction-btn">Get Direction</button>
+        </section>
+    </div>
+
+ <footer class="site-footer">
+        <div class="footer-sections">
+            <div class="footer-section">
+              <img src="images/logo.png" alt="Funner Events Logo" class="logo" width="200px" style="margin-left: 0;">  
+            </div>
+            <div class="footer-section">
+
+                <ul>
+                    <li>Home</li>
+                    <li>Events</li>
+                    <li>Become a Vector</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+          
+            <div class="footer-section">
+                
+                <ul>
+                    <li>TERMS & CONDITIONS</li>
+                     <li>Wedding Events</li>
+                    <li>Corporate Events</li>
+                    <li>Entertainment Events</li>
+                    <li>Sports Events</li>
+                    <li>All Type Of Family Events</li> 
+                </ul>
+            </div>
+            <div class="footer-section">
+                <img src="images/25ff8f45e3721afaab7c15cc79e74742(1).jpg" width="200px">
+            </div>
+
+            <div class="footer-section">
+              <p>CONTACT</p>
+                <p><i class="fas fa-map-marker-alt"></i> 21, Amman Nagar, RMK Road, Karur-26</p>
+                <p><i class="fas fa-phone"></i> Phone: +921556214566</p>
+                <p><i class="fas fa-envelope"></i> E-mail - Funnerevent.in</p>
+                <p>Get in Touch.</p>
+           
+
+        
+               
+                <div class="social-icons">
+                    <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+       
+    </footer>
+</body>
+  </html>

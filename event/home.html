@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funner Events</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #fff;
+}
+
+header {
+    
+    background-color:#3D0A2F; /* Deep purple */
+    color: white;
+    padding: 10px 0;
+    border-radius: 15px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 80px; /* Adjust as needed */
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+ .nav-links .active{
+    color: #25D366;
+}
+.active:hover{
+    color: red;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.search-bar button {
+    background-color: #ffd700; /* Gold-like color */
+    color: #4b0082;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.banner-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.about-us-mission {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #3D0A2F;
+}
+       .site-footer {
+    background-color: #3D0A2F; /* Light blue background as seen in the image */
+    color: white; /* Darker text for readability */
+    padding: 40px 20px;
+    margin-top: auto; /* Pushes the footer to the bottom */
+ border: #5d2b5c;
+  border-radius: 15px;
+  height: fit-content;
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to wrap on smaller screens */
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+ 
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+   
+}
+
+.footer-section {
+    flex: 1; /* Allows sections to grow and shrink */
+    min-width: 200px; /* Minimum width before wrapping */
+    margin: 15px;
+}
+
+.footer-sections p, li{
+    font-size: large;
+}
+
+
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a,
+.footer-section p a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+}
+
+.footer-section ul li a:hover,
+.footer-section p a:hover {
+    color: #007bff; /* Hover effect for links */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 2em;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff; /* Hover effect for social icons */
+}
+.whatsapp { color: #25D366; }
+.youtube { color: #FF0000; }
+.instagram { color: #C13584; }
+.facebook { color: #3B5998; }
+
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+.img{
+    margin-top: 20px;
+    
+}
+.container {
+    text-align: center;
+    padding: 20px;
+    max-width: 1400px;
+    width: 100%;
+}
+
+.tagline {
+    font-family: serif; /* To match the cursive-like font in the image */
+    font-size: 2em;
+    color: #5d005d; /* A deep purple color similar to the image */
+    margin-bottom: 40px;
+   
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: start;
+    margin-left: 10%;
+}
+
+.service-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.service-item img {
+    width: 100px; /* Adjust size as needed */
+    height: 100px; /* Adjust size as needed */
+    margin-bottom: 10px;
+    
+}
+
+.service-item p {
+    font-family: serif; /* To match the cursive-like font in the image */
+    font-size: 1.1em;
+
+    margin: 0;
+}
+
+.funner {
+    text-align: center;
+    margin-bottom: 30px;
+    color: rgba(84, 3, 84, 0.937);
+}
+
+.funner h1 {
+    font-size: 2em;
+}
+
+.grid-container {
+    display: grid;
+    /* Define 3 columns with flexible units, and potentially more rows for content */
+    /* Adjust 'minmax' values and 'gap' as needed for desired spacing and responsiveness */
+    grid-template-columns: 1fr 1.5fr 1fr; /* Left column, middle for images, right column */
+    grid-template-rows: auto auto auto auto; /* Rows for cards and images */
+    gap: 20px; /* Space between grid items */
+    max-width: 1200px; /* Max width for the overall layout */
+    width: 100%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+
+/* Positioning specific items within the grid */
+.card-top-left { grid-area: 1 / 1 / 2 / 2; } /* Row 1, Column 1 */
+.card-top-right { grid-area: 1 / 3 / 2 / 4; } /* Row 1, Column 3 */
+
+.center-image { 
+    grid-area: 1 / 2 / 3 / 3; /* Spans from Row 1 to Row 2, stays in Column 2 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-middle-left { grid-area: 2 / 1 / 3 / 2; } /* Row 2, Column 1 */
+.card-middle-right { grid-area: 2 / 3 / 3 / 4; } /* Row 2, Column 3 */
+
+.bottom-image { 
+    grid-area: 3 / 2 / 5 / 3; /* Spans from Row 3 to Row 4, stays in Column 2 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-bottom-left { grid-area: 4 / 1 / 5 / 2; } /* Row 4, Column 1 */
+.card-bottom-right { grid-area: 4 / 3 / 5 / 4; } /* Row 4, Column 3 */
+
+
+.card {
+    background-color:  rgba(205, 159, 205, 0.918); /* White background for the cards */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 8px 8px 8px rgba(30, 29, 29, 0.1); /* Subtle shadow for depth */
+    padding: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.card h3 {
+    color: rgba(84, 3, 84, 0.937); /* Darker heading color */
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.card p {
+    color: rgba(59, 3, 59, 0.937); /* Grey text color */
+    line-height: 1.6;
+    font-size: 0.95em;
+}
+
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below image */
+    border-radius: 8px; /* Optional: Rounded corners for images */
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+    .grid-container {
+        /* On smaller screens, stack items, or adjust grid for better flow */
+        grid-template-columns: 1fr; /* Single column layout */
+        grid-template-rows: auto; /* Rows adjust automatically */
+        place-items: center; /* Center items in the single column */
+    }
+
+    /* Reset grid areas for single column layout */
+    .card-top-left, .card-top-right,
+    .center-image,
+    .card-middle-left, .card-middle-right,
+    .bottom-image,
+    .card-bottom-left, .card-bottom-right {
+        grid-area: unset !important; /* Remove specific grid area assignments */
+    }
+
+    .card {
+        width: 90%; /* Adjust card width for smaller screens */
+        max-width: 500px; /* Max width for cards in single column */
+    }
+} .oval-image {
+      width: 500px; /* Adjust width */
+      height: 400px; /* Adjust height */
+      border-radius: 50%; /* Makes it oval */
+      overflow: hidden; /* Ensures the image fits inside the shape */
+    }
+
+    .oval-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; /* Ensures the image scales properly */
+    }
+    .page-title h1 {
+    font-size: 2em;
+    color:  rgba(59, 3, 59, 0.937);
+    margin-bottom: 40px;
+}
+
+.event-grid {
+    display: grid;
+    /* This creates a responsive grid that fits as many columns as possible,
+       each with a minimum width of 250px and a maximum of 1 fraction of available space. */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px; /* Space between grid items */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.event-item {
+
+    border-radius: 10px;
+   
+    overflow: hidden; /* Ensures image corners are rounded with the container */
+    padding-bottom: 15px; /* Space for the text below the image */
+    text-align: center;
+
+}
+
+.event-item img {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent image size */
+    object-fit: cover; /* Ensures images fill the space without distortion */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.event-item p {
+    font-size: 1.1em;
+    color: rgba(59, 3, 59, 0.937);
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .event-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Fewer columns on smaller screens */
+        gap: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .event-grid {
+        grid-template-columns: 1fr; /* Single column on very small screens */
+        gap: 15px;
+    }
+    .page-title h1 {
+        font-size: 1.5em;
+    }
+}
+.gallery-container {
+    display: grid; /* Enables CSS Grid layout */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Flexible columns, adjust minmax for desired column size */
+    grid-auto-rows: minmax(200px, auto); /* Flexible rows, adjust minmax for desired row height, auto allows content to define height */
+    gap: 10px; /* Spacing between grid items */
+    padding: 20px;
+    max-width: 1200px; /* Max width for the gallery */
+    width: 100%; /* Ensures it takes full width up to max-width */
+    grid-auto-flow: dense; /* Helps fill gaps in the grid for a masonry-like effect */
+margin-left: 10%;
+}
+
+.gallery-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures image doesn't overflow its container if it's too big */
+    border-radius: 5px; /* Optional: adds rounded corners to image containers */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: adds a subtle shadow */
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%; /* Important: makes image fill its container */
+    object-fit: cover; /* Crops image to fill the item area while maintaining aspect ratio */
+    display: block; /* Removes any extra space below images */
+}
+
+/* Specific styling for the large image */
+.large-item {
+    grid-column: span 2; /* Spans 2 columns */
+    grid-row: span 3; /* Spans 3 rows */
+}
+
+/* Adjustments for smaller screens (responsiveness) */
+@media (max-width: 768px) {
+    .gallery-container {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Adjust column size for tablets */
+    }
+    .large-item {
+        grid-column: span 2; /* Still spans 2 columns */
+        grid-row: span 2; /* Adjust row span for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        grid-template-columns: 1fr; /* Stack all items in a single column on mobile */
+        grid-auto-rows: minmax(150px, auto);
+    }
+    .large-item {
+        grid-column: span 1; /* Large image now spans 1 column */
+        grid-row: span 1; /* Large image spans 1 row on mobile */
+    }
+}
+.testimonials-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    justify-content: center;
+    gap: 70px; /* Space between cards */
+    padding: 20px;
+    max-width: 1200px; /* Max width for the container */
+    margin-left:10%;
+}
+
+.testimonial-card {
+    background-color: #e6d8f5; /* Light purple background, similar to image */
+    border-radius: 15px; /* Rounded corners */
+    padding: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 300px; /* Fixed width for cards */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align content to the start */
+    text-align: left;
+
+}
+
+.profile-section {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.profile-pic {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Ensure image covers the area */
+    margin-right: 15px;
+}
+
+.user-info h3 {
+    margin: 0;
+    font-size: 1.1em;
+    color: black;
+}
+
+.location {
+    margin: 5px 0 0;
+    font-size: 0.85em;
+    color: black;
+}
+
+.quote {
+    font-size: 0.95em;
+    line-height: 1.6;
+    color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .testimonial-card {
+        width: 80%; /* Adjust width for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .testimonial-card {
+        width: 95%; /* Further adjust for very small screens */
+        padding: 20px;
+    }
+    .profile-pic {
+        width: 50px;
+        height: 50px;
+    }
+    .user-info h3 {
+        font-size: 1em;
+    }
+    .quote {
+        font-size: 0.9em;
+    }
+}
+
+.faq-container {
+    width: 100%;
+    max-width: 1200px;
+    background-color: #f7eafc; /* Lighter purple background */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Ensures smooth collapse animation */
+    margin-left: 10%;
+    margin-bottom: 5%;
+}
+
+.faq-item {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-question {
+    background-color: #c9a7d9; /* Purple for question background */
+    color: black;
+    padding: 18px 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: #b795c7; /* Slightly darker purple on hover */
+}
+
+.faq-question .icon {
+    font-size: 1.2em;
+    font-weight: normal;
+}
+
+.faq-answer {
+    background-color:  #c9a7d9; /* Lighter purple for answer background */
+    color: black;
+    padding: 0 25px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+    
+}
+
+.faq-item.active .faq-answer {
+    max-height: 200px; /* Adjust as needed for content height */
+    padding: 15px 25px;
+}
+
+.faq-item.active .faq-question .icon {
+    transform: rotate(0deg); /* Or could be used to switch between +/- icons visually */
+}
+
+</style>
+</head>
+<body>
+  <header>
+        <nav class="navbar">
+            <div class="logo">
+                 <img src="images/logo.png" alt="logo" >
+                
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html"class="active">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="vender.html" >Become a Vendor</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            <i class="fas fa-search"></i>
+            </div>
+            <div class="icons">
+                 <a href="profile.html" style="color: white;"><i class="fas fa-user-circle"></i></a>
+            </div>
+        </nav>
+  
+    </header>
+          <div class="img">
+            <img src="images/home.png" width="1480px">
+        </div>
+        <div class="container">
+        <h1 class="tagline">“Crafting Excellence with Our Trusted Partners.”</h1>
+        <div class="services-grid">
+            <div class="service-item">
+                <!-- Replace with actual icon, e.g., <i class="fas fa-brush"></i> -->
+                <img src="images/beauty.png" alt="Beauty Icon">
+                <p>Beauty</p>
+            </div>
+            <div class="service-item">
+                <img src="images/shalon.png" alt="Salon Icon">
+                <p>Salon</p>
+            </div>
+            <div class="service-item">
+                <img src="images/catering.png" alt="Catering Icon">
+                <p>Catering</p>
+            </div>
+            <div class="service-item">
+                <img src="images/transport.png" alt="Transportation Icon">
+                <p>Transportation</p>
+            </div>
+            <div class="service-item">
+                <img src="images/florist.png" alt="Florist Icon">
+                <p>Florist</p>
+            </div>
+            <div class="service-item">
+                <img src="images/office.png" alt="Officiants Icon">
+                <p>Officiants</p>
+            </div>
+            <div class="service-item" >
+                <img src="images/hd-handshake-black-icon-symbol-png-701751695033322vdogeuyrmp.png" alt="Rental Icon">
+                <p>Rental</p>
+            </div>
+            <div class="service-item">
+                <img src="images/venue.png" alt="Venues Icon">
+                <p>Venues</p>
+            </div>
+            <div class="service-item" >
+                <img src="images/photo.png" alt="Photography Icon">
+                <p>Photography</p>
+            </div>
+            <div class="service-item" >
+                <img src="images/jewlery.png" alt="Jewellery Icon">
+                <p>Jewellery</p>
+            </div>
+            <div class="service-item" >
+                <img src="images/cake.png" alt="Cake Icon">
+                <p>Cake</p>
+            </div>
+        </div>
+    </div>
+<div class="funner">
+      
+      <center> <h1>"Why Work With Funner."</h1></center> 
+
+</div>
+    <main class="grid-container">
+        <!-- Top-left card -->
+        <div class="card card-top-left">
+            <h3>Experience That Speaks Volumes</h3>
+            <p>With years of hands-on experience in managing corporate events, weddings, festivals, and private parties, we know what it takes to turn any vision into a seamless and unforgettable reality.</p>
+        </div>
+
+        <!-- Top-right card -->
+        <div class="card card-top-right">
+            <h3>Creative & Customized Solutions</h3>
+            <p>No two events are the same. We work closely with our clients to design tailored experiences that reflect their goals, themes, and budgets down to the smallest detail.</p>
+        </div>
+
+        <!-- Center Image -->
+        <div class="center-image">
+            <div class="oval-image">
+            <img src="images/olympia-1543733_1280-1024x682.jpg" alt="Olympic Rings with Athletes" class="responsive-image">
+        </div>
+        </div>
+
+        <!-- Middle-left card -->
+        <div class="card card-middle-left">
+            <h3>End-to-End Service</h3>
+            <p>From concept to cleanup, we handle everything. Our all-inclusive event management services cover planning, logistics, vendor coordination, on-site management, and more—so you can relax and enjoy the moment.</p>
+        </div>
+
+        <!-- Middle-right card -->
+        <div class="card card-middle-right">
+            <h3>Proven Track Record</h3>
+            <p>With a portfolio of successful events and glowing client testimonials, we've earned a reputation for exceeding expectations and delivering memorable experiences every time.</p>
+        </div>
+        
+        <!-- Bottom Image -->
+        <div class="bottom-image">
+            <img src="images/fe-30.jpg" alt="Corporate Event Setup" class="responsive-image">
+        </div>
+
+        <!-- Bottom-left card -->
+        <div class="card card-bottom-left">
+            <h3>Reliable Team of Professionals</h3>
+            <p>Our team is made up of passionate, experienced professionals dedicated to delivering excellence and making your event a resounding success. You can count on us for reliable and top-notch service.</p>
+        </div>
+
+        <!-- Bottom-right card -->
+        <div class="card card-bottom-right">
+            <h3>Stress-Free Execution</h3>
+            <p>We take care of all the details, so you can focus on enjoying your event. Our meticulous planning and execution ensure a smooth and memorable experience from start to finish.</p>
+        </div>
+    </main>
+ <div class="funner">
+        <h1>"Moment That We Create, Where Every Detail Tells a Story"</h1>
+ </div>
+
+    <div class="event-grid">
+        <div class="event-item">
+            <img src="images/Locate-Your-Events-Purpose.jpg" alt="Corporate Event">
+            <p>Corporate Event</p>
+        </div>
+        <div class="event-item">
+            <img src="images/download.jfif" alt="Wedding Event">
+            <p>Wedding Event</p>
+        </div>
+        <div class="event-item">
+            <img src="images/579b97bd-39b7-4fa4-8362-fa9908188aa1.jpeg" alt="Sports Event">
+            <p>Sports Event</p>
+        </div>
+        <div class="event-item">
+            <img src="images/Holi.jpg" alt="Religious Festive Event">
+            <p>Religious Festive Event</p>
+        </div>
+        <div class="event-item">
+            <img src="images/entertainment-event-managment.jpg" alt="Entertainment Event">
+            <p>Entertainment Event</p>
+        </div>
+        <div class="event-item">
+            <img src="images/EPN_0539-3-1-e1705934863400.jpg" alt="Technology Event">
+            <p>Technology Event</p>
+        </div>
+        <div class="event-item">
+            <img src="images/EEXi4tWWwAElRKT.jpg" alt="Exclusive Balloon Event">
+            <p>Exclusive Balloon Event</p>
+        </div>
+    </div>
+     <div class="container">
+        <h1 class="tagline">“Crafting Excellence with Our Trusted Partners.”</h1>
+        <div class="services-grid">
+            <div class="service-item">
+                <!-- Replace with actual icon, e.g., <i class="fas fa-brush"></i> -->
+                <img src="images/done.png" alt="Beauty Icon">
+                <p>1500+</p>
+                <p>Events Done</p>
+            </div>
+            <div class="service-item">
+                <img src="images/client.png" alt="Salon Icon">
+                <p>600+</p>
+                <p>Happy Clients</p>
+            </div>
+            <div class="service-item">
+                <img src="images/jewelry-rings-jewelry-icon-isolated-design-illustration-diamond-ring-icon-simple-sign-trendy-and-modern-jewelry-ring-icon-symbols-for-logo-template-website-vector.jpg" alt="Catering Icon">
+                <p>200+</p>
+                <p>Wedding Event Done</p>
+            </div>
+            <div class="service-item">
+                <img src="images/images.png" alt="Transportation Icon">
+                <p>260+</p>
+                <p>Corporate Event Done</p>
+            </div>
+            <div class="service-item">
+                <img src="images/an-inclusive-workplace-employees-protection-filled-outline-icon-illustration-color-editable-eps-10-free-vector.jpg" alt="Florist Icon">
+                <p>100</p>
+                <p>Happy Employees</p>
+            </div>
+            
+        </div>
+    </div>
+    <div class="funner">
+        <h1>"Legacy Of Memorable Moments"</h1>
+ </div>
+
+      <div class="gallery-container">
+        <!-- Large image on the left -->
+        <div class="gallery-item large-item">
+            <img src="images/c448e921ab604a042908af69124c4c9e.jpg" alt="Hot Air Balloons">
+        </div>
+
+        <!-- Smaller images in a grid/collage on the right -->
+        <div class="gallery-item small-item">
+            <img src="images/d172f9a2-1b8f-4bd5-b9b3-df9071817bd6.jpg" alt="Wedding Ceremony">
+        </div>
+        <div class="gallery-item small-item">
+            <img src="images/how-to-plan-an-event.jpg" alt="Beach Wedding">
+        </div>
+        <div class="gallery-item large-item">
+            <img src="images/Corporate-Party.jpg" alt="Temple Exterior">
+        </div>
+        <div class="gallery-item large-item">
+            <img src="images/copper-events-01.jpg" alt="Party Scene">
+        </div>
+        <div class="gallery-item small-item">
+            <img src="images/Corporate-Company-visits-at-sunnys-world-Pune-2.jpg" alt="Conference Hall">
+        </div>
+        <div class="gallery-item small-item">
+            <img src="images/soccer.png" alt="Soccer Ball Arch">
+        </div>
+        <div class="gallery-item small-item">
+            <img src="images/images (1).jfif" alt="Cheers Toast">
+        </div>
+        <div class="gallery-item small-item">
+            <img src="images/birthday-party-decorations-8.jpg" alt="Birthday Setup">
+        </div>
+    </div>
+    <div class="funner">
+        <h1>"Voices of Celebration, Powered by Us</h1>
+        <h1>Because Happy Clients are Our Best Achivement" </h1>
+ </div>
+       <div class="testimonials-container">
+        <div class="testimonial-card">
+            <div class="profile-section">
+                <img src="images/profile.jpg" alt="John Peter" class="profile-pic">
+                <div class="user-info">
+                    <h3>John Peter</h3>
+                    <p class="location">Bangalore, India</p>
+                </div>
+            </div>
+            <p class="quote"><b>"Our Dream Wedding Come True"</b><br>"The team turned our vision into reality. Everything was so seamless—from the décor to the schedule. We didn't have to worry about a thing!"</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="profile-section">
+                <img src="images/profile.jpg" alt="bernanderr" class="profile-pic">
+                <div class="user-info">
+                    <h3>bernanderr</h3>
+                    <p class="location">Kerala, India</p>
+                </div>
+            </div>
+            <p class="quote"><b>"Professional and Reliable"</b><br>"We've worked with several planners before, but this team stands out. Their coordination for our annual gala exceeded expectations."</p>
+        </div>
+
+        <div class="testimonial-card">
+            <div class="profile-section">
+                <img src="images/profile.jpg" alt="Raveena" class="profile-pic">
+                <div class="user-info">
+                    <h3>Raveena</h3>
+                    <p class="location">Chennai, India</p>
+                </div>
+            </div>
+            <p class="quote"><b>"Flawless Execution!"</b><br>"From start to finish, the event was perfectly managed. The attention to detail, professional team, and creative touch made our corporate retreat unforgettable."</p>
+        </div>
+    </div>
+    <div class="funner">
+      
+      <center> <h1>"Everything You Need To Know </h1>
+    <h1>About Funner Events"</h1></center> 
+
+</div>
+     <div class="faq-container">
+        <div class="faq-item active">
+            <div class="faq-question">
+                Can you work with our budget?
+                <span class="icon">-</span>
+            </div>
+            <div class="faq-answer">
+                Yes. We aim to create memorable experiences at various budget levels. During our initial consultation, we'll discuss your budget and suggest options that maximize value.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                How far in advance should I book your services?
+                <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+                It's recommended to book as early as possible, especially for peak seasons, to ensure availability and proper planning.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do you handle vendor coordination?
+                <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+                Absolutely! We can manage all aspects of vendor coordination, from communication to logistics, to ensure a seamless event.
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                Do you offer customizable event packages?
+                <span class="icon">+</span>
+            </div>
+            <div class="faq-answer">
+                Yes, we offer customizable packages to tailor our services to your specific needs and preferences.
+            </div>
+        </div>
+    </div>
+
+ <footer class="site-footer">
+        <div class="footer-sections">
+            <div class="footer-section">
+              <img src="images/logo.png" alt="Funner Events Logo" class="logo" width="200px" style="margin-left: 0;">  
+            </div>
+            <div class="footer-section">
+
+                <ul>
+                    <li>Home</li>
+                    <li>Events</li>
+                    <li>Become a Vector</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                
+                <ul>
+                    <li>TERMS & CONDITIONS</li>
+                     <li>Wedding Events</li>
+                    <li>Corporate Events</li>
+                    <li>Entertainment Events</li>
+                    <li>Sports Events</li>
+                    <li>All Type Of Family Events</li> 
+                </ul>
+            </div>
+            <div class="footer-section">
+                <img src="images/25ff8f45e3721afaab7c15cc79e74742(1).jpg" width="200px">
+            </div>
+
+            <div class="footer-section">
+              <p>CONTACT</p>
+                <p><i class="fas fa-map-marker-alt"></i> 21, Amman Nagar, RMK Road, Karur-26</p>
+                <p><i class="fas fa-phone"></i> Phone: +921556214566</p>
+                <p><i class="fas fa-envelope"></i> E-mail - Funnerevent.in</p>
+                <p>Get in Touch.</p>
+           
+
+        
+               
+                <div class="social-icons">
+                    <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+       
+    </footer>
+     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
+        const icon = item.querySelector('.icon');
+        const answer = item.querySelector('.faq-answer');
+
+        question.addEventListener('click', () => {
+            // Close all other open FAQ items (optional, for accordion-like behavior)
+            faqItems.forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.icon').textContent = '+';
+                    otherItem.querySelector('.faq-answer').style.maxHeight = null; // Reset max-height
+                    otherItem.querySelector('.faq-answer').style.padding = '0 25px'; // Reset padding
+                }
+            });
+
+            // Toggle the clicked FAQ item
+            item.classList.toggle('active');
+
+            if (item.classList.contains('active')) {
+                icon.textContent = '-';
+                // Set max-height to scrollHeight for smooth animation, then reset after transition
+                answer.style.maxHeight = answer.scrollHeight + 'px';
+                answer.style.padding = '15px 25px'; // Add padding when open
+            } else {
+                icon.textContent = '+';
+                answer.style.maxHeight = null;
+                answer.style.padding = '0 25px'; // Remove padding when closed
+            }
+        });
+    });
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funner Events</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+   <style>
+        
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color:  rgba(108, 9, 80, 0.5);
+}
+
+header {
+    
+    background-color:#3D0A2F; /* Deep purple */
+    color: white;
+    padding: 10px 0;
+    border-radius: 15px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 80px; /* Adjust as needed */
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+ .nav-links .active{
+    color: #25D366;
+}
+.active:hover{
+    color: red;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.search-bar button {
+    background-color: #ffd700; /* Gold-like color */
+    color: #4b0082;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+ .site-footer {
+    background-color: #3D0A2F; /* Light blue background as seen in the image */
+    color: white; /* Darker text for readability */
+    padding: 40px 20px;
+    margin-top: auto; /* Pushes the footer to the bottom */
+ border: #5d2b5c;
+  border-radius: 15px;
+  height: fit-content;
+
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to wrap on smaller screens */
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+ 
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+   
+}
+
+.footer-section {
+    flex: 1; /* Allows sections to grow and shrink */
+    min-width: 200px; /* Minimum width before wrapping */
+    margin: 15px;
+}
+
+.footer-sections p, li{
+    font-size: large;
+}
+
+
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a,
+.footer-section p a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+}
+
+.footer-section ul li a:hover,
+.footer-section p a:hover {
+    color: #007bff; /* Hover effect for links */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 2em;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff; /* Hover effect for social icons */
+}
+.whatsapp { color: #25D366; }
+.youtube { color: #FF0000; }
+.instagram { color: #C13584; }
+.facebook { color: #3B5998; }
+
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+.background-with-overlay {
+    position: relative; /* Fix it to cover the entire viewport */
+
+    width: 100%;
+    height: 80%;
+    background-image: url('images/feature-16.jpg'); /* Your image and transparent overlay */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex; /* Use flexbox to center the .container */
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Send it to the back so other content is on top */
+    border-radius: 15px;
+   
+}
+
+/* Ensure the main content container is positioned above the background */
+.container {
+    position: relative; /* Needed to place it above the background */
+    z-index: 1; /* Ensure it's above the background-with-overlay */
+    display: flex;
+    width: 100%;
+    height: 100%;
+    max-width: 1600px;
+    background-color: rgba(108, 9, 80, 0.5); /* Slightly transparent white for the container background */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow for better separation */
+z-index: 1;
+}
+
+.left-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: black; /* Darker purple for text */
+    background-color:  rgba(108, 9, 80, 0.5);
+    
+}
+
+.left-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.left-section p {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+}
+
+.icon-section {
+    width: 150px;
+    height: 150px;
+    background-color: #4a0072; /* Purple circle */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.user-lock-icon {
+    width: 100%; /* Adjust as needed */
+    height: 100%;
+    object-fit: contain;
+   border-radius: 50%; /* Make icon white if it's dark by default */
+}
+
+.right-section {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+     background-color:  rgba(108, 9, 80, 0.5);/* Lighter background for the form area */
+
+    }
+
+.login-box h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #4a0072;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: black;
+    font-weight: bolder;
+    font-size: larger;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 15px;
+    box-sizing: border-box; /* Include padding in width */
+background-color: #333;
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin-bottom: 20px;
+    color: black;
+    text-decoration: none;
+    font-size: 1em;
+    
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+    background-color: #6a0099;
+}
+
+.new-customer-link {
+    text-align: right;
+    margin-top: 20px;
+    color: yellow;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 95%;
+    }
+
+    .left-section, .right-section {
+        padding: 30px;
+    }
+
+    .login-box h2, .new-customer-link {
+        text-align: center;
+    }
+}
+
+    </style>
+</head>
+<body>
+      <header>
+        <nav class="navbar">
+            <div class="logo">
+                 <img src="images/logo.png" alt="logo" >
+                
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="events.html" >Events</a></li>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="vender.html" >Become a Vendor</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            <i class="fas fa-search"></i>
+            </div>
+            <div class="icons">
+                 <a href="profile.html" style="color:white;"><i class="fas fa-user-circle"></i></a>
+            </div>
+        </nav>
+        </header>
+    <div class="background-with-overlay"> <!-- New wrapper for background image and overlay -->
+        <div class="container">
+            <div class="left-section">
+                <h1>Welcome to Funner Events</h1>
+                <p>"Good to see you again! Let's get things done."</p>
+                <div class="icon-section">
+                    <img src="images/e56b841924ac729935e858cb59535fb7.jpg" alt="User and Lock Icon" class="user-lock-icon">
+                </div>
+            </div>
+            <div class="right-section">
+                <div class="login-box">
+                    <h2>Log in</h2>
+                    <form id="loginForm">
+                        <div class="input-group">
+                            <label for="username">User Name</label>
+                            <input type="text" id="username" name="username" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required>
+                        </div>
+                        <a href="#" class="forgot-password">Forgot Password</a>
+                        <button type="submit" class="login-button"><a href="home.html" style="text-decoration: none;color: white;">Log in</a></button>
+                    </form>
+                    <p class="new-customer-link">I Am a New Customer.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+   
+     <footer class="site-footer">
+        <div class="footer-sections">
+            <div class="footer-section">
+              <img src="images/logo.png" alt="Funner Events Logo" class="logo" width="200px" style="margin-left: 0;">  
+            </div>
+            <div class="footer-section">
+
+                <ul>
+                    <li>Home</li>
+                    <li>Events</li>
+                    <li>Become a Vector</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+          
+            <div class="footer-section">
+                
+                <ul>
+                    <li>TERMS & CONDITIONS</li>
+                     <li>Wedding Events</li>
+                    <li>Corporate Events</li>
+                    <li>Entertainment Events</li>
+                    <li>Sports Events</li>
+                    <li>All Type Of Family Events</li> 
+                </ul>
+            </div>
+            <div class="footer-section">
+                <img src="images/25ff8f45e3721afaab7c15cc79e74742(1).jpg" width="200px">
+            </div>
+
+            <div class="footer-section">
+              <p>CONTACT</p>
+                <p><i class="fas fa-map-marker-alt"></i> 21, Amman Nagar, RMK Road, Karur-26</p>
+                <p><i class="fas fa-phone"></i> Phone: +921556214566</p>
+                <p><i class="fas fa-envelope"></i> E-mail - Funnerevent.in</p>
+                <p>Get in Touch.</p>
+           
+
+        
+               
+                <div class="social-icons">
+                    <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+       
+    </footer>
+</body>
+</html>

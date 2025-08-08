@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funner Events</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #fff;
+        }
+
+        header {
+
+            background-color: #3D0A2F;
+            /* Deep purple */
+            color: white;
+            padding: 10px 0;
+            border-radius: 15px;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo img {
+            height: 80px;
+            /* Adjust as needed */
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+
+        .logo span {
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+        }
+
+        .nav-links .active {
+            color: #25D366;
+        }
+
+        .active:hover {
+            color: red;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            border: none;
+            padding: 8px;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        .search-bar button {
+            background-color: #ffd700;
+            /* Gold-like color */
+            color: #4b0082;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+ .site-footer {
+            background-color: #3D0A2F;
+            /* Light blue background as seen in the image */
+            color: white;
+            /* Darker text for readability */
+            padding: 40px 20px;
+            margin-top: auto;
+            /* Pushes the footer to the bottom */
+            border: #5d2b5c;
+            border-radius: 15px;
+            height: fit-content;
+        }
+
+        .footer-sections {
+            display: flex;
+            flex-wrap: wrap;
+            /* Allows sections to wrap on smaller screens */
+            justify-content: space-around;
+            max-width: 1200px;
+            margin: 0 auto;
+
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+
+        }
+
+        .footer-section {
+            flex: 1;
+            /* Allows sections to grow and shrink */
+            min-width: 200px;
+            /* Minimum width before wrapping */
+            margin: 15px;
+        }
+
+        .footer-sections p,
+        li {
+            font-size: large;
+        }
+
+
+
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+
+        .footer-section ul li a,
+        .footer-section p a {
+            color: black;
+            text-decoration: none;
+            transition: color 0.3s ease;
+
+        }
+
+        .footer-section ul li a:hover,
+        .footer-section p a:hover {
+            color: #007bff;
+            /* Hover effect for links */
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            font-size: 2em;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #007bff;
+            /* Hover effect for social icons */
+        }
+
+        .whatsapp {
+            color: #25D366;
+        }
+
+        .youtube {
+            color: #FF0000;
+        }
+
+        .instagram {
+            color: #C13584;
+        }
+
+        .facebook {
+            color: #3B5998;
+        }
+
+
+
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 768px) {
+            .footer-sections {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .footer-section {
+                text-align: center;
+                margin-bottom: 30px;
+            }
+
+            .footer-section h3::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+.container {
+    display: flex;
+    width: 100%;
+    max-width: 1200px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+     background-image: url('images/d172f9a2-1b8f-4bd5-b9b3-df9071817bd6.jpg'); /* Replace with your image */
+margin-top: 5%;
+margin-bottom: 5%;
+margin-left: 10%;
+    }
+
+.left-section {
+    flex: 1;
+   
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.left-section h1, .left-section h2, .left-section h3, .left-section h4, .left-section h5 {
+    margin: 5px 0;
+    text-align: left;
+}
+
+.left-section h1 { font-size: 2.5em; }
+.left-section h2 { font-size: 2em; }
+.left-section h3 { font-size: 1.8em; }
+.left-section h4 { font-size: 1.5em; }
+.left-section h5 { font-size: 1.2em; }
+
+.right-section {
+    flex: 1;
+    padding: 40px;
+}
+
+.right-section form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.right-section form input[type="text"],
+.right-section form input[type="email"],
+.right-section form input[type="tel"],
+.right-section form select {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 15px;
+     border: 3px solid black;
+    border-radius: 15px;
+}
+
+.captcha-placeholder {
+    height: 80px; /* Adjust as needed for reCAPTCHA widget */
+    background-color: #f0f0f0;
+    border: 3px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    color: black;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.right-section form button {
+    background-color: rgb(53, 2, 53); /* Pink color, adjust as needed */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 1em;
+    width: 100%;
+}
+
+
+
+/* Basic Responsiveness */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 95%;
+    }
+    .left-section, .right-section {
+        padding: 20px;
+    }
+}
+#attendees:hover{
+    cursor: pointer;
+
+}
+.offerings-section {
+    text-align: center;
+    padding: 20px;
+    max-width: 1200px;
+    width: 100%;
+    margin-left: 10%;
+}
+
+.section-title {
+    color: #4b0082; /* Deep Purple */
+    margin-bottom: 40px;
+    font-size: 2.5em;
+}
+
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 15px;
+   
+    overflow: hidden;
+    width: calc(33% - 20px); /* Approximately 3 cards per row with gap */
+    min-width: 280px; /* Minimum width for responsiveness */
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-image {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent card appearance */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 15px;
+}
+
+.card-title {
+    color:black; /* Deep Purple */
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card {
+        width: calc(50% - 20px); /* 2 cards per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        width: 90%; /* 1 card per row on small screens */
+    }
+    .section-title {
+        font-size: 2em;
+    }
+}
+        </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="images/logo.png" alt="logo">
+
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="events.html" >Events</a></li>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="vender.html">Become a Vendor</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+                <i class="fas fa-search"></i>
+            </div>
+            <div class="icons">
+              <a href="profile.html" style="color: white;">  <i class="fas fa-user-circle"></i></a>
+            </div>
+        </nav>
+    </header>
+      <div class="container">
+        <div class="left-section">
+            <h1>YOUR PERFECT WEDDING,</h1>
+            <h2>METICULOUSLY</h2>
+            <h3>PLANNED AND</h3>
+            <h4>BEAUTIFULLY</h4>
+            <h5>EXECUTED</h5>
+        </div>
+        <div class="right-section">
+            <form action="#" method="POST">
+               
+                <input type="text" id="name" name="name" placeholder="Name" required>
+
+              
+                <input type="email" id="email" name="email" placeholder="E-mail" required>
+
+               
+                <input type="tel" id="mobile" name="mobile" pattern="[0-9]{10}" placeholder="Mobile No" required>
+
+              
+                <input type="text" id="wedding-event" name="wedding_event" placeholder="Wedding Event">
+
+                <select id="attendees" name="attendees">
+                   <option value="less-than-100">Select Number Of Attendees</option>
+                    <option value="less-than-100">Less than 100</option>
+                    <option value="100-500">100-500</option>
+                    <option value="more-than-500">More than 500</option>
+                    <option value="more-than-1000">More Than 1000</option>
+                </select>
+                
+                
+              <div class="captcha-placeholder"> 
+                 <input type="checkbox" id="termsConditions" name="termsConditions" required> <!-- In a real application, you would integrate a reCAPTCHA API here -->
+ <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div></div>
+                <button type="submit">Get free Consultation</button>
+            </form>
+        </div>
+    </div>
+     <section class="offerings-section">
+        <h1 class="section-title">Our Offerings</h1>
+        <div class="cards-container">
+            <div class="card">
+                <img src="images/istockphoto-1340256496-612x612.jpg" alt="Wedding Planner" class="card-image">
+                <h2 class="card-title">Wedding Planner</h2>
+            </div>
+            <div class="card">
+                <img src="images/koncepts-01.jpg" alt="Wedding Decor" class="card-image">
+                <h2 class="card-title">Wedding Decor</h2>
+            </div>
+            <div class="card">
+                <img src="images/festal-events-h-thumb.jpg" alt="Hospitality" class="card-image">
+                <h2 class="card-title">Hospitality</h2>
+            </div>
+             <div class="card">
+                <img src="images/3(1).jpg" alt="Hospitality" class="card-image">
+                <h2 class="card-title">Logistic</h2>
+            </div> 
+            <div class="card">
+                <img src="images/wedding-videography-services-1505984902-3342095.jpeg" alt="Hospitality" class="card-image">
+                <h2 class="card-title">Photography & Videography</h2>
+            </div> 
+            <div class="card">
+                <img src="images/2(1).jpg" alt="Hospitality" class="card-image">
+                <h2 class="card-title">Artist Management</h2>
+            </div> 
+            <div class="card">
+                <img src="images/Types-of-Accommodations-in-Tourism.jpg" alt="Hospitality" class="card-image">
+                <h2 class="card-title">Accomodation</h2>
+            </div> 
+            <div class="card">
+                <img src="images/download (1).jfif" alt="Hospitality" class="card-image">
+                <h2 class="card-title">Veg & Nonveg Catering</h2>
+            </div>
+             <div class="card">
+                <img src="images/dress.png" alt="Hospitality" class="card-image">
+                <h2 class="card-title">Dress</h2>
+            </div> 
+            <div class="card">
+                <img src="images/location.png" alt="Hospitality" class="card-image">
+                <h2 class="card-title">Wedding Location</h2>
+            </div> 
+            <div class="card">
+                <img src="images/product-jpeg.jpg" alt="Hospitality" class="card-image">
+                <h2 class="card-title">Return Gifts</h2>
+            </div> 
+            <div class="card">
+                <img src="images/mehandhi.png" alt="Hospitality" class="card-image">
+                <h2 class="card-title">Mehandhi & Makeup Artist</h2>
+            </div>
+        </div>
+    </section>
+     <footer class="site-footer">
+        <div class="footer-sections">
+            <div class="footer-section">
+                <img src="images/logo.png" alt="Funner Events Logo" class="logo" width="200px" style="margin-left: 0;">
+            </div>
+            <div class="footer-section">
+
+                <ul>
+                    <li>Home</li>
+                    <li>Events</li>
+                    <li>Become a Vector</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+
+                <ul>
+                    <li>TERMS & CONDITIONS</li>
+                    <li>Wedding Events</li>
+                    <li>Corporate Events</li>
+                    <li>Entertainment Events</li>
+                    <li>Sports Events</li>
+                    <li>All Type Of Family Events</li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <img src="images/25ff8f45e3721afaab7c15cc79e74742(1).jpg" width="200px">
+            </div>
+
+            <div class="footer-section">
+                <p>CONTACT</p>
+                <p><i class="fas fa-map-marker-alt"></i> 21, Amman Nagar, RMK Road, Karur-26</p>
+                <p><i class="fas fa-phone"></i> Phone: +921556214566</p>
+                <p><i class="fas fa-envelope"></i> E-mail - Funnerevent.in</p>
+                <p>Get in Touch.</p>
+
+
+
+
+                <div class="social-icons">
+                    <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+     <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('.right-section form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // Basic form validation (client-side)
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const mobile = document.getElementById('mobile').value;
+        const attendees = document.getElementById('attendees').value;
+
+        if (!name || !email || !mobile || !attendees) {
+            alert('Please fill in all required fields.');
+            return;
+        }
+
+        // In a real application, you would send this data to a server
+        console.log('Form submitted with data:');
+        console.log('Name:', name);
+        console.log('Email:', email);
+        console.log('Mobile No:', mobile);
+        console.log('Wedding Event:', document.getElementById('wedding-event').value);
+        console.log('Number of Attendees:', attendees);
+
+        alert('Consultation request sent successfully!');
+        form.reset(); // Clear the form
+    });
+});
+
+    </script>
+    </body>
+    </html>

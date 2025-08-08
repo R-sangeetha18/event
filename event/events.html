@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funner Events</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #fff;
+}
+
+header {
+    
+    background-color:#3D0A2F; /* Deep purple */
+    color: white;
+    padding: 10px 0;
+    border-radius: 15px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 80px; /* Adjust as needed */
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+ .nav-links .active{
+    color: #25D366;
+}
+.active:hover{
+    color: red;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.search-bar button {
+    background-color: #ffd700; /* Gold-like color */
+    color: #4b0082;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.hero-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.banner-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.about-us-mission {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #3D0A2F;
+}
+       .site-footer {
+    background-color: #3D0A2F; /* Light blue background as seen in the image */
+    color: white; /* Darker text for readability */
+    padding: 40px 20px;
+    margin-top: auto; /* Pushes the footer to the bottom */
+ border: #5d2b5c;
+  border-radius: 15px;
+  height: fit-content;
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to wrap on smaller screens */
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+ 
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+   
+}
+
+.footer-section {
+    flex: 1; /* Allows sections to grow and shrink */
+    min-width: 200px; /* Minimum width before wrapping */
+    margin: 15px;
+}
+
+.footer-sections p, li{
+    font-size: large;
+}
+
+
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a,
+.footer-section p a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+}
+
+.footer-section ul li a:hover,
+.footer-section p a:hover {
+    color: #007bff; /* Hover effect for links */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 2em;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff; /* Hover effect for social icons */
+}
+.whatsapp { color: #25D366; }
+.youtube { color: #FF0000; }
+.instagram { color: #C13584; }
+.facebook { color: #3B5998; }
+
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+.container {
+    text-align: center;
+    max-width: 1200px; /* Adjust as needed */
+    padding: 20px;
+    margin-left: 10%;
+}
+
+.main-quote {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    color: maroon;
+}
+
+.events-section {
+    display: flex;
+    flex-wrap: wrap; /* Allows cards to wrap on smaller screens */
+    justify-content: center;
+    gap: 20px; /* Space between cards */
+}
+
+.event-card {
+    background-color: rgb(232, 217, 232);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 450px; /* Adjust card width as needed */
+    text-align: center;
+    overflow: hidden; /* Ensures image corners are rounded with card */
+}
+
+.event-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Slightly rounded image corners */
+    margin-bottom: 15px;
+}
+
+.event-card h2 {
+    font-size: 1.3em;
+    color:  #3D0A2F;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .events-section {
+        flex-direction: column; /* Stack cards vertically on smaller screens */
+        align-items: center;
+    }
+
+    .event-card {
+        width: 80%; /* Adjust width for stacked cards */
+        max-width: 350px; /* Max width even when stacked */
+    }
+}
+.funner {
+    text-align: center;
+    margin-bottom: 30px;
+    color: rgba(84, 3, 84, 0.937);
+}
+
+.funner h1 {
+    font-size: 2em;
+}
+
+</style>
+</head>
+  <header>
+        <nav class="navbar">
+            <div class="logo">
+                 <img src="images/logo.png" alt="logo" >
+                
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="events.html" class="active">Events</a></li>
+                <li><a href="index.html">About Us</a></li>
+                <li><a href="vender.html" >Become a Vendor</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            <i class="fas fa-search"></i>
+            </div>
+            <div class="icons">
+              <a href="profile.html" style="color: white;">   <i class="fas fa-user-circle"></i></a>
+            </div>
+        </nav>
+        </header>
+        <div class="funner">
+      
+      <center> <h1>Our Events</h1></center> 
+
+</div>
+
+         <div class="container">
+        <h1 class="main-quote">"An event is not over until everyone stops talking about it."</h1>
+
+        <div class="events-section">
+            <div class="event-card">
+                <img src="images/sport.png" alt="Sports Events">
+                <h2>Sports Events</h2>
+            </div>
+            <div class="event-card">
+                <img src="images/lion.png" alt="Birthday Events">
+                <h2>Birthday Events</h2>
+            </div>
+             <div class="event-card">
+                <img src="images/entertaiment.png" alt="Birthday Events">
+                <h2>Entertainment Events</h2>
+            </div>
+             <div class="event-card">
+                <a href="wedding.html" style="text-decoration: none;">
+                <img src="images/marriage.png" alt="Birthday Events">
+                <h2>Wedding Events</h2></a>
+            </div>
+             <div class="event-card">
+                <img src="images/corporate.png" alt="Birthday Events">
+                <h2>Corporate Events</h2>
+            </div>
+             <div class="event-card">
+                <img src="images/festival.png" alt="Birthday Events">
+                <h2>Religious Festival Events</h2>
+            </div>
+             <div class="event-card">
+                <img src="images/religious.png" alt="Birthday Events">
+                <h2>All Type of Religious & Family Events</h2>
+            </div>
+        </div>
+
+    </div>
+    
+   <footer class="site-footer">
+        <div class="footer-sections">
+            <div class="footer-section">
+              <img src="images/logo.png" alt="Funner Events Logo" class="logo" width="200px" style="margin-left: 0;">  
+            </div>
+            <div class="footer-section">
+
+                <ul>
+                    <li>Home</li>
+                    <li>Events</li>
+                    <li>Become a Vector</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                
+                <ul>
+                    <li>TERMS & CONDITIONS</li>
+                     <li>Wedding Events</li>
+                    <li>Corporate Events</li>
+                    <li>Entertainment Events</li>
+                    <li>Sports Events</li>
+                    <li>All Type Of Family Events</li> 
+                </ul>
+            </div>
+            <div class="footer-section">
+                <img src="images/25ff8f45e3721afaab7c15cc79e74742(1).jpg" width="200px">
+            </div>
+
+            <div class="footer-section">
+              <p>CONTACT</p>
+                <p><i class="fas fa-map-marker-alt"></i> 21, Amman Nagar, RMK Road, Karur-26</p>
+                <p><i class="fas fa-phone"></i> Phone: +921556214566</p>
+                <p><i class="fas fa-envelope"></i> E-mail - Funnerevent.in</p>
+                <p>Get in Touch.</p>
+           
+
+        
+               
+                <div class="social-icons">
+                    <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+       
+    </footer>
+    </body>
+    </html>

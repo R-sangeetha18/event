@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funner Events</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    background-color: #fff;
+}
+
+header {
+    
+    background-color:#3D0A2F; /* Deep purple */
+    color: white;
+    padding: 10px 0;
+    border-radius: 15px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo img {
+    height: 80px; /* Adjust as needed */
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+ .nav-links .active{
+    color: #25D366;
+}
+.active:hover{
+    color: red;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    border: none;
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 5px;
+}
+
+.search-bar button {
+    background-color: #ffd700; /* Gold-like color */
+    color: #4b0082;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.hero-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.banner-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.about-us-mission {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #3D0A2F;
+}
+       .site-footer {
+    background-color: #3D0A2F; /* Light blue background as seen in the image */
+    color: white; /* Darker text for readability */
+    padding: 40px 20px;
+    margin-top: auto; /* Pushes the footer to the bottom */
+ border: #5d2b5c;
+  border-radius: 15px;
+  height: fit-content;
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to wrap on smaller screens */
+    justify-content: space-around;
+    max-width: 1200px;
+    margin: 0 auto;
+ 
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+   
+}
+
+.footer-section {
+    flex: 1; /* Allows sections to grow and shrink */
+    min-width: 200px; /* Minimum width before wrapping */
+    margin: 15px;
+}
+
+.footer-sections p, li{
+    font-size: large;
+}
+
+
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a,
+.footer-section p a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+}
+
+.footer-section ul li a:hover,
+.footer-section p a:hover {
+    color: #007bff; /* Hover effect for links */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 2em;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff; /* Hover effect for social icons */
+}
+.whatsapp { color: #25D366; }
+.youtube { color: #FF0000; }
+.instagram { color: #C13584; }
+.facebook { color: #3B5998; }
+
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+.product-page-container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 8px;
+   
+    overflow: hidden; /* Ensures image corners are rounded if needed by future styles */
+    max-width: 1000px;
+    width: 100%;
+ max-width: fit-content;
+    margin-left: 5%;
+}
+
+.product-image-section {
+    position: relative;
+    flex: 1;
+    min-width: 300px; /* Adjust as needed for smaller screens */
+}
+
+.product-image-section img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Ensures image covers the area without distortion */
+}
+
+
+
+
+.product-details-section {
+    flex: 1;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-details-section h1 {
+    font-size: 4em;
+    color: #3D0A2F;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.product-details-section p {
+    font-size: 1.5em;
+    line-height: 1.6;
+    color: #3D0A2F;
+    margin-bottom: 25px;
+}
+
+@media (max-width: 768px) {
+    .product-page-container {
+        flex-direction: column; /* Stack image and details vertically */
+        max-width: 90%;
+    }
+
+    .product-image-section {
+        min-width: unset;
+        height: 300px; /* Fixed height for image on smaller screens */
+    }
+
+    .product-details-section {
+        padding: 20px;
+    }
+
+   
+}
+
+@media (max-width: 480px) {
+  
+   .product-details-section h1 {
+        font-size: 1.5em;
+    }
+
+    .product-details-section p {
+        font-size: 0.9em;
+    }
+
+    .buy-now-button {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Feature Section Styling */
+.features-section {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 40px 0;
+    background-color: #2a2a2a; /* Slightly lighter dark background for this section */
+    border-radius: 8px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.feature-item {
+    flex: 1; /* Allows items to take equal space */
+    min-width: 250px; /* Minimum width before wrapping */
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+.feature-item .icon {
+    font-size: 3em; /* Size of the icon */
+    color: #f7d057; /* Yellowish color for icons */
+    margin-bottom: 15px;
+}
+
+.feature-item p {
+    font-size: 1.1em;
+    line-height: 1.6;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .features-section {
+        flex-direction: column; /* Stack features vertically on smaller screens */
+        align-items: center;
+    }
+
+    .feature-item {
+        min-width: unset; /* Remove min-width to allow full width */
+        width: 100%;
+    }
+
+    .client-logos img {
+        max-width: 100px; /* Smaller logos on small screens */
+    }
+}
+.clients-section {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+   
+    text-align: center; /* To center the "Our Clients" heading */
+}
+
+.section-title {
+    font-size: 2.5em;
+    color: #5a2d67; /* A color similar to the image's title */
+    margin-bottom: 30px;
+}
+
+.container {
+    display: flex; /* Enables Flexbox for horizontal arrangement */
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center; /* Centers items horizontally */
+    align-items: flex-start; /* Aligns items to the start of the cross-axis */
+    gap: 30px; /* Space between the two main containers */
+}
+
+.client-logos-container {
+    flex: 2; /* Takes up more space */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers logos within their container */
+    align-items: center;
+    gap: 20px; /* Space between individual logos */
+    padding: 20px;
+   /* Optional: adds a subtle border */
+}
+
+.client-logo {
+    max-width: 120px; /* Adjust as needed */
+    height: auto;
+    opacity: 0.8; /* Slight opacity as seen in some similar examples */
+    transition: opacity 0.3s ease-in-out;
+}
+
+.client-logo:hover {
+    opacity: 1;
+}
+
+.client-text-container {
+    flex: 1; /* Takes up less space than the logos container */
+    text-align: left;
+    padding: 20px;
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #5d2b5c;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* Stacks containers vertically on smaller screens */
+        align-items: center; /* Centers stacked containers */
+    }
+
+    .client-logos-container,
+    .client-text-container {
+        flex: none; /* Removes flex growth on smaller screens */
+        width: 90%; /* Adjust width for smaller screens */
+        margin-bottom: 20px; /* Space between stacked containers */
+    }
+}
+p{
+    font-size: larger;
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                 <img src="images/logo.png" alt="logo" >
+                
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="index.html"class="active">About Us</a></li>
+                <li><a href="vender.html" >Become a Vendor</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+            <div class="search-bar">
+                <input type="text" placeholder="Search...">
+            <i class="fas fa-search"></i>
+            </div>
+            <div class="icons">
+                 <a href="profile.html" style="color: white;"><i class="fas fa-user-circle"></i></a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <img src="images/hd-acciss-team.jpg" alt="Team Photo" class="banner-image" width="1300px">
+        </section>
+
+        <section class="about-us-mission">
+            <p>To act as a reliable and experiential event organisation partner for our valued clients and help them put together successful events with the help of our experience, expertise and undying commitment to high service standards.</p>
+        </section>
+    </main>
+    <div class="product-page-container">
+       <div class="product-details-section">
+            <center><h1>Our Story</h1></center>
+      <p>At Funner Event,we are comitted to going above and beyond to ensure our clients are able to deliver disruptive experiences.We started our journey in the event organization spae over two decades ago.During this time,we have organised delightful events for over 100+ brands</p>
+         
+        </div>
+          <div class="product-image-section">
+           <img src="images/3C4A0534edit-1-scaled.jpg">
+          
+        </div>
+     </div>
+         <div class="container">
+        <!-- Top Feature Section -->
+        <section class="features-section">
+            <div class="feature-item">
+                <i class="fas fa-star icon"></i>
+                <p style="color: #f7d057">To never say never</p>
+                <p> and do our best to deliver on our promises and our clients' requirements.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-tools icon"></i>
+                <p style="color: #f7d057">To provide turnkey solutions</p>
+                <p> and help our clients navigate through the various aspects of organising successful events.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fas fa-lightbulb icon"></i>
+                <p style="color: #f7d057">To continuously innovate</p>
+                <p> and help our clients put forth their brand message in new and ever-engaging ways.</p>
+            </div>
+        </section>
+
+         </div>
+          <section class="clients-section">
+        <h2 class="section-title">Our Clients</h2>
+        <div class="container">
+            <div class="client-logos-container">
+                <img src="images/sbi-investigates-reported-massive-data-leak-showcase_image-2-a-11986.jpg" alt="SBI Logo" class="client-logo">
+                <img src="images/FEDERAL-BANK-28-3-2024.jpg" alt="Federal Bank Logo" class="client-logo">
+                <img src="images/16508-1592_import(1).png" alt="The Hindu Express Logo" class="client-logo">
+                <img src="images/16508-1592_import.png" alt="Indian Terrain Logo" class="client-logo">
+                <img src="images/lic-2.jpg" alt="LIC Logo" class="client-logo">
+                <img src="images/Aditya_Birla_Group_Logo.svg.png" alt="Aditya Birla Group Logo" class="client-logo">
+                <img src="images/HealthifyMe.jpg" alt="HealthifyMe Logo" class="client-logo">
+                <img src="images/images (2).png" alt="Philips Logo" class="client-logo">
+            </div>
+            <div class="client-text-container">
+                <p>Our expertise and commitment to quality have helped us grow in leaps and bounds. Over the past two decades, we have had the pleasure of working with some of the most sought-after brands on the planet:.</p>
+            </div>
+        </div>
+    </section>
+  <footer class="site-footer">
+        <div class="footer-sections">
+            <div class="footer-section">
+              <img src="images/logo.png" alt="Funner Events Logo" class="logo" width="200px" style="margin-left: 0;">  
+            </div>
+            <div class="footer-section">
+
+                <ul>
+                    <li>Home</li>
+                    <li>Events</li>
+                    <li>Become a Vector</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                </ul>
+            </div>
+
+            <div class="footer-section">
+                
+                <ul>
+                    <li>TERMS & CONDITIONS</li>
+                     <li>Wedding Events</li>
+                    <li>Corporate Events</li>
+                    <li>Entertainment Events</li>
+                    <li>Sports Events</li>
+                    <li>All Type Of Family Events</li> 
+                </ul>
+            </div>
+            <div class="footer-section">
+                <img src="images/25ff8f45e3721afaab7c15cc79e74742(1).jpg" width="200px">
+            </div>
+
+            <div class="footer-section">
+              <p>CONTACT</p>
+                <p><i class="fas fa-map-marker-alt"></i> 21, Amman Nagar, RMK Road, Karur-26</p>
+                <p><i class="fas fa-phone"></i> Phone: +921556214566</p>
+                <p><i class="fas fa-envelope"></i> E-mail - Funnerevent.in</p>
+                <p>Get in Touch.</p>
+           
+
+        
+               
+                <div class="social-icons">
+                    <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon youtube"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+   
+</body>
+</html>
