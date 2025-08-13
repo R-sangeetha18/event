@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Player Profile</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.profile-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+  
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-bottom: 2px solid #333;
+    
+
+}
+
+.icon-placeholder {
+    margin-bottom: 20px;
+}
+
+.icon-placeholder img {
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    border-radius: 50%; /* If your icon is circular */
+    object-fit: cover;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+    width:500px;
+    margin-left: 30%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"] {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input::placeholder {
+    color: #aaa;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    width: 20%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>CREATE YOUR PLAYER PROFILE</h1>
+        <div class="icon-placeholder">
+            <!-- Placeholder for the profile icon -->
+            <img src="images/Screenshot 2025-08-12 125827.png" alt="Profile Icon">
+        </div>
+        <form>
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" placeholder="Name">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="E-Mail">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Phone Number">
+            </div>
+            <div class="form-group">
+                <label for="ageDob">Age / Date Of Birth</label>
+                <input type="text" id="ageDob" placeholder="Age/DOB">
+            </div>
+            <div class="form-group">
+                <label for="username">Choose A Username</label>
+                <input type="text" id="username" placeholder="Username">
+            </div>
+            <div class="form-group">
+                <label for="password">Set A Secure Password</label>
+                <input type="password" id="password" placeholder="Password">
+            </div>
+            <button type="submit"><a href="add.html" style="text-decoration: none;color: white;">Add Your Profile</a></button>
+        </form>
+    </div>
+    <script>
+        // This file can be used for form validation or submission handling.
+// Example: Basic form validation
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+        // Prevent default form submission
+        event.preventDefault();
+
+        // Basic validation example: check if full name is not empty
+        const fullNameInput = document.getElementById('fullName');
+        if (fullNameInput.value.trim() === '') {
+            alert('Full Name cannot be empty!');
+            return;
+        }
+
+        // If all validations pass, you can submit the form data
+        // For demonstration, we'll just log to console
+        console.log('Form submitted successfully!');
+        // In a real application, you would send this data to a server
+    });
+});
+    </script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Player Profile</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.profile-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+  
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 24px;
+    border-bottom: 2px solid #333;
+    
+
+}
+
+.icon-placeholder {
+    margin-bottom: 20px;
+}
+
+.icon-placeholder img {
+    width: 80px; /* Adjust size as needed */
+    height: 80px; /* Adjust size as needed */
+    border-radius: 50%; /* If your icon is circular */
+    object-fit: cover;
+}
+
+
+button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    margin-top: 20px;
+    width: 20%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+<body>
+    <div class="profile-container">
+        <h1>CREATE YOUR PLAYER PROFILE</h1>
+        <div class="icon-placeholder">
+            <!-- Placeholder for the profile icon -->
+            <img src="images/Screenshot 2025-08-12 125827.png" alt="Profile Icon">
+        </div>
+        <div class="card">
+            
+         <img src="images/success (1).gif" width="500px">
+         </div>
+          <button id="submit"><a href="index.html" style="text-decoration: none;color: white;">Select Your Tournament</a></button>
+    </div>
+    <script>
+        // This file can be used for form validation or submission handling.
+// Example: Basic form validation
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function(event) {
+        // Prevent default form submission
+        event.preventDefault();
+
+        // Basic validation example: check if full name is not empty
+        const fullNameInput = document.getElementById('fullName');
+        if (fullNameInput.value.trim() === '') {
+            alert('Full Name cannot be empty!');
+            return;
+        }
+
+        // If all validations pass, you can submit the form data
+        // For demonstration, we'll just log to console
+        console.log('Form submitted successfully!');
+        // In a real application, you would send this data to a server
+    });
+});
+    </script>
+</body>
+</html>

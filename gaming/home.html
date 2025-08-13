@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+           /* Global Styles & Reset */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #fff; /* Dark background from the image */
+    color: black; /* Light text color */
+      font-style: Roboto;
+}
+
+/* Header & Navigation */
+header {
+    background-color: aqua; /* Black header background */
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo img{
+
+    width: 150px;
+    height: 150px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-left:70px;
+    margin-right: 80px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: larger;
+    font-style: Roboto;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: blue; /* Hover effect with accent color */
+    text-decoration: underline;
+}
+nav li .active{
+     color: blue; /* Hover effect with accent color */
+    text-decoration: underline;
+}
+.login-btn {
+    background-color: aqua; /* Pink color from the image */
+    padding: 8px 15px;
+    border: #000 solid 1px;
+
+}
+.login-btn:hover{
+    background-color: #007bff;
+}
+
+/* Hamburger menu for mobile - initially hidden */
+.hamburger-menu {
+    display: none; /* Hide on desktop */
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Responsive Styles for smaller screens (e.g., max-width: 768px) */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* Hide regular menu */
+        flex-direction: column;
+        position: absolute;
+        top: 80px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        background-color: #000;
+        padding: 20px;
+        box-shadow: 0 5px 10px rgba(0,0,0,0.5);
+    }
+
+    nav ul.active {
+        display: flex; /* Show when active */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger */
+    }
+}
+  .site-footer {
+    background-color:#FF00A6; /* Light blue background as seen in the image */
+    color: black; /* Darker text for readability */
+    padding: 40px 20px;
+    margin-top: auto; /* Pushes the footer to the bottom */
+ border: #5d2b5c;
+  border-radius: 15px;
+  height: fit-content;
+}
+
+.footer-sections {
+    display: flex;
+    flex-wrap: wrap; /* Allows sections to wrap on smaller screens */
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+ 
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+   
+}
+
+.footer-section {
+    flex: 1; /* Allows sections to grow and shrink */
+    min-width: 200px; /* Minimum width before wrapping */
+    margin: 15px;
+}
+
+.footer-sections p, li{
+    font-size: large;
+}
+
+
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 8px;
+}
+
+.footer-section ul li a,
+.footer-section p a {
+    color: black;
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+}
+
+.footer-section ul li a:hover,
+.footer-section p a:hover {
+    color: #007bff; /* Hover effect for links */
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+}
+
+.social-icon {
+    font-size: 2em;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-icon:hover {
+    color: #007bff; /* Hover effect for social icons */
+}
+.whatsapp { color: #25D366; }
+.linkedin { color: blue; }
+.instagram { color: #C13584; }
+.facebook { color: #3B5998; }
+.google { color: blue; }
+
+
+
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+#pricingOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* Animation properties */
+    opacity: 0; /* Start invisible */
+    visibility: hidden; /* Hide from screen readers and interaction */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Smooth transition */
+}
+
+#pricingOverlay.show { /* New class to trigger visibility and opacity */
+    opacity: 1; /* Fully visible */
+    visibility: visible; /* Make visible for interaction */
+}
+
+#pricingMessage {
+    background-color: white;
+    padding: 40px;
+    border-radius: 8px;
+width: 100%;
+height: max-content;
+    max-width: 1200px;
+    text-align: center;
+    position: relative;
+    /* Optional: Add a slight scale-up animation for the message box itself */
+      transform: translateY(-100px); /* Start 100px above its final position */
+    opacity: 0; /* Start invisible for message content itself */
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out; 
+}
+
+#pricingOverlay.show #pricingMessage {
+    transform: translateY(0); /* Slide to its natural position */
+    opacity: 1; 
+    }
+
+
+.message-content h2 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.message-content p {
+    font-size: large;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.message-content a {
+    color: blue;
+   
+    font-weight: bold;
+}
+
+.message-content  a:hover {
+    text-decoration: underline;
+}
+
+.overlay {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    visibility: hidden; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Login Popup Styles */
+.login-popup {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    max-width: 900px; /* Adjust as needed */
+    width: 90%;
+    position: relative;
+    transform: scale(0.8); /* Start smaller for animation */
+    opacity: 0;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+}
+
+.overlay.active .login-popup {
+    transform: scale(1); /* Scale up to original size */
+    opacity: 1;
+}
+
+/* Container for image and form - Use Flexbox for side-by-side layout */
+.popup-content {
+    display: flex; /* Makes children (image and form) flex items */
+    width: 100%;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #333;
+    z-index: 10; /* Ensure it's above other content */
+}
+
+.popup-image {
+    flex: 1; /* Allows image to take equal width as form */
+    background-color: #f0f0f0; /* Placeholder if image not loaded */
+}
+
+.popup-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.popup-form {
+    flex: 1; /* Allows form to take equal width as image */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically centers content within the form section */
+}
+
+/* Rest of the CSS remains the same as before */
+.tabs {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.tab-link {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #555;
+    border-bottom: 2px solid transparent;
+    transition: border-bottom 0.3s ease;
+}
+
+.tab-link.active {
+    color: #007bff;
+    border-bottom-color: #007bff;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.login-submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.login-submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.forgot-password {
+    text-align: right;
+    display: block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.social-login-divider {
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+    color: black;
+}
+
+.social-login-divider::before,
+.social-login-divider::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+width: 40%;
+    height: 1px;
+    background-color: black;
+}
+.social-login-divider::before {
+    left: 0;
+}
+
+.social-login-divider::after {
+    right: 0;
+}
+
+.social-login {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icon {
+   
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    color: #007bff;
+}
+
+.social-icon:hover {
+    background-color: blue;
+}
+
+.form-section {
+    display: none; /* Hidden by default */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.form-section.active {
+    display: block; /* Show when active */
+    opacity: 1;
+}
+
+/* Update general form button style */
+.form-submit-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Make button full width */
+}
+
+.form-submit-btn:hover {
+    background-color: #0056b3;
+}
+
+.slider-container {
+position: relative;
+width: 100vw;
+height: 100vh;
+overflow: hidden; /* Hide overflow of slides */
+margin-top: 2%;
+}
+.slide {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 80%;
+background-size: cover;
+background-position: center;
+display: flex;
+justify-content: center;
+align-items: center;
+text-align: center;
+color: white;
+opacity: 0; /* Hidden by default /
+transition: opacity 1s ease-in-out; / Smooth fade transition */
+
+}
+.slide.active-slide {
+opacity: 1; /* Show active slide */
+}
+
+#slide1 {
+background-image: url('images/Satranç\ Nedir_\ Nasıl\ Oynanır_\ Tarihçesi\ Nedir_.jpeg'); 
+}
+#slide2 {
+background-image: url('images/Santé\ Magazine\ -\ Que\ manger\ avant\ d_aller\ courir\ un\ marathon\ _.jpeg'); /* Replace with your image */
+}
+.overlay {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent dark overlay */
+z-index: 1;
+}
+.content {
+position: relative;
+z-index: 2;
+padding: 20px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.content h2 {
+font-size: 3em;
+margin-bottom: 10px;
+}
+.content p {
+font-size: 1.2em;
+margin-bottom: 20px;
+line-height: 1.5;
+}
+.register-button {
+background-color: white;
+color: black;
+padding: 15px 30px;
+border: none;
+border-radius: 5px;
+font-size: 1.5em;
+cursor: pointer;
+transition: all 0.5s ease; /* Transition for button position and style /
+position: absolute; / Crucial for absolute positioning relative to .slide /
+bottom: 50px; / Default bottom position /
+transform: translateX(-50%); / Center horizontally by default */
+}
+.slide.active-slide .register-button.button-pos-1 {
+left: 20%;
+bottom: 50px;
+}
+.slide.active-slide .register-button.button-pos-2 {
+right: 20%; /* Example position for slide 2 */
+bottom: 80px;
+}
+.register-button:hover {
+background-color: white;
+transform: scale(1.05) translateX(-50%); /* Add scale effect while maintaining center */
+}
+.nav-button {
+position: absolute;
+top: 50%;
+transform: translateY(-50%);
+background-color: rgba(0, 0, 0, 0.5);
+color: white;
+border: none;
+padding: 15px;
+cursor: pointer;
+font-size: 2em;
+z-index: 3;
+transition: background-color 0.3s;
+}
+.nav-button:hover {
+background-color: rgba(0, 0, 0, 0.8);
+}
+.banner {
+    margin-bottom: 40px;
+        
+}
+.banner h1{
+    font-size: 2.5em;
+    color: #000;
+    margin-bottom: 10px;
+}
+.banner p{
+    font-size: 1.1em;
+    color: #000;
+    max-width: 1200px;
+    margin:0 auto;
+}
+
+.containers{
+width: 100%;
+max-width: 1200px;
+margin-left: 5%;
+border: 2px solid black;
+padding: 50px;
+}
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden; /* Crucial for controlling image zoom within the card */
+}
+
+.category-card h2 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.category-card img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for image zoom */
+}
+
+.category-card img:hover {
+    transform: scale(1.05); /* Zooms in the image by 5% on hover */
+}
+
+.category-card button {
+    background-color: white;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease; /* Smooth transition for background color change */
+}
+
+.category-card button:hover {
+    background-color: #007bff; /* Darker blue on hover */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .categories-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+.slider-containers {
+    max-width: 400px; /* Adjust as needed */
+    position: relative;
+    margin: auto;
+    border: 5px solid #ddd; /* Adds a border similar to the image's "frame" */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    overflow: hidden; /* Ensures content doesn't spill out */
+    margin-right: 5%;
+}
+
+/* Hide the images by default */
+.mySlides {
+    display: none;
+    width: 100%; /* Make sure slide takes full width of container */
+}
+
+.mySlides img {
+    width: 100%;
+    height: auto;
+    display: block; /* Remove extra space below image */
+}
+
+/* Overlay Styling */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+   
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px; /* Add some padding inside the overlay */
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+
+
+.overlay-icon {
+    font-size: 3em; /* Size of the icon/emoji */
+    margin-bottom: 10px;
+    display: block; /* Ensures icon is on its own line */
+    margin-left: 90%;
+    margin-top: 70%;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+   
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+
+/* The dots/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: #fff;
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+.container {
+    display: flex; /* Enables Flexbox for side-by-side layout */
+    justify-content: space-around; /* Distributes space around items */
+    align-items: flex-start; /* Aligns items to the start of the cross-axis */
+    gap: 30px; /* Space between the text and image areas */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 85%;
+    border:2px solid black;
+    margin-left: 5%;
+    margin-top: 10px;
+    border-bottom: none;
+}
+
+.rewards-text {
+    flex: 1; /* Allows this section to grow and take available space */
+    padding-right: 20px;
+}
+
+.rewards-text h2 {
+    color: #333;
+    margin-bottom: 15px;
+    margin-left: 10%;
+}
+
+.rewards-text p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+    margin-left: 10%;
+}
+.rewards-container {
+    display: grid; /* Use CSS Grid for a flexible 2x2 layout */
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); /* Responsive columns */
+    gap: 30px; /* Space between cards */
+    max-width: 1325px;
+    width: 100%;
+    margin-left: 5%;
+    border: 2px solid black;
+    border-radius: 15px;
+    border-top: none;
+    background-color: #fff;
+}
+
+.reward-card {
+    background-color: #fff;
+    border-radius: 10px;
+
+    padding: 25px;
+    text-align: center;
+   
+}
+
+
+
+.card-image img {
+    max-width: 150px; /* Adjust size as needed */
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.card-reward,
+.card-bonus,
+.card-tagline {
+    font-size: 0.95em;
+    color: #555;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.card-tagline {
+    font-style: italic;
+    color: #777;
+    margin-top: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .rewards-container {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        padding: 15px;
+    }
+}
+.page-container {
+background-image: url('images/download\ \(4\).jpeg'); 
+background-size: cover; 
+background-position: center;
+background-repeat: no-repeat;
+
+min-height: 100vh; 
+padding: 20px;
+box-sizing: border-box; 
+color: white; 
+
+}
+.page-container h1, .page-container h2, .page-container h3, .page-container p {
+color: white; /* Ensures headings and paragraphs are white on the background */
+}
+.champion-profiles {
+display: flex;
+flex-wrap: wrap; 
+justify-content: center;
+gap: 30px;
+margin-top: 40px;
+}
+.champion-card {
+
+border-radius: 10px;
+padding: 20px;
+width: 1200px; 
+
+display: flex;
+flex-direction: column;
+align-items: start;
+text-align: start;
+margin-right: 30%;
+
+}
+.champion-card img {
+width: 120px;
+height: 120px;
+border-radius: 15px; 
+object-fit: cover;
+margin-bottom: 15px;
+
+
+
+}
+.champion-info h2 {
+margin-top: 0;
+margin-bottom: 5px;
+}
+.champion-info p {
+font-size: 0.9em;
+margin-bottom: 10px;
+}
+.champion-info h3 {
+margin-top: 15px;
+margin-bottom: 5px;
+font-size: 1.1em;
+
+}
+.champion-info ul {
+list-style: none;
+padding: 0;
+margin: 0;
+text-align: left; /* Align list items to the left within the card */
+}
+.champion-info li {
+font-size: 1.5em;
+margin-bottom: 5px;
+}
+
+.slider-container2 {
+    display: flex;
+    width: 100%; /* Adjust as needed */
+    max-width: 1500px;
+    background-color: #fff;
+  
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+.image-slider {
+    flex: 2; /* Takes more space for images, now on the left */
+    overflow: hidden;
+    position: relative;
+}
+
+.slides {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    height: 100%;
+}
+
+.slides img {
+    width: 100%;
+    height:100%;
+    object-fit: cover;
+    display: inline;
+    flex-shrink: 0;
+    border-radius: 25px;
+
+}
+
+.content-area {
+    flex: 1; /* Takes less space for content, now on the right */
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.content-area h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+.content-area p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 8px; /* Add some spacing between content lines */
+}
+
+.content-area p:last-of-type {
+    margin-bottom: 20px; /* More space before buttons */
+}
+
+.content-area strong {
+    color: black; /* Highlight labels */
+}
+
+.navigation-buttons {
+     /* Pushes buttons to the bottom of the content area */
+    display: flex;
+    justify-content: space-between;
+}
+
+.navigation-buttons button {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    flex: 1; /* Make buttons take equal space */
+    margin: 0 5px; /* Add space between buttons */
+}
+
+.navigation-buttons button:first-child {
+    margin-left: 0;
+}
+.navigation-buttons button:last-child {
+    margin-right: 0;
+}
+
+
+.navigation-buttons button:hover {
+    background-color: #0056b3;
+}
+
+ </style>
+</head>
+<body>
+     <header>
+        <div class="logo">
+            <img src="images/logo.png">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#"class="active" style="background-color: aqua;">HOME</a></li>
+                <li><a href="index.html" >TOURNAMENTS</a></li>
+                <li><a href="#"  id="pricingLink">PRICING</a></li>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="#" class="login-btn"id="loginBtn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+     <div id="pricingOverlay" class="hidden"> <!-- Changed div to act as the full screen overlay -->
+        <div id="pricingMessage">
+            <div class="message-content">
+                <h2>CONTACT US</h2>
+                <p>We Serve Tournaments, From Large To Small!</p>
+                <p>Contact Us Now For Pricing For Your Tournament</p>
+                <p style="text-decoration: underline;"><a href="mailto:Pricing@Skillsphereclub.Com">Pricing@Skillsphereclub.Com</a></p>
+            </div>
+        </div>
+    </div>
+     <div class="overlay" id="loginOverlay">
+        <div class="login-popup">
+            <span class="close-btn" id="closeLogin">&times;</span>
+            <div class="popup-content">
+                <div class="popup-image">
+                    <img src="images/download (10).jpeg" alt="Dynamic Background">
+                </div>
+                <div class="popup-form">
+                    <div class="tabs">
+                        <button class="tab-link active" data-tab="login">Login</button>
+                        <button class="tab-link" data-tab="signup">Signup</button>
+                    </div>
+
+                    <!-- Login Form Section -->
+                    <form id="loginForm" class="form-section active">
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter Your Username/Email">
+                        </div>
+                        <div class="input-group">
+                            <input type="password" placeholder="Enter Your Password">
+                        </div>
+                        <div class="remember-me">
+                            <input type="checkbox" id="rememberMe">
+                            <label for="rememberMe">Remember Me?</label>
+                        </div>
+                        <button type="submit" class="form-submit-btn">Login</button>
+                        <a href="#" class="forgot-password">Forgot Password?</a>
+                        <div class="social-login-divider">Or</div>
+                        <div class="social-login">
+                            <button class="social-icon">G</button>
+                            <button class="social-icon">f</button>
+                            <button class="social-icon">in</button>
+                        </div>
+                    </form>
+
+                    <!-- Signup Form Section -->
+                    <form id="signupForm" class="form-section">
+                        <div class="input-group">
+                            <input type="text" placeholder="Enter Your Username">
+                        </div>
+                        <div class="input-group">
+                            <input type="email" placeholder="Enter Your Email">
+                        </div>
+                        <div class="input-group">
+                            <input type="password" placeholder="Enter Your Password">
+                        </div>
+                      
+                        <div class="input-group">
+                            <input type="tel" placeholder="Enter Your Phone Number">
+                        </div>
+                        <button type="submit" class="form-submit-btn">Signup</button>
+                        <div class="social-login-divider">Or</div>
+                        <div class="social-login">
+                            <button class="social-icon">G</button>
+                            <button class="social-icon">f</button>
+                            <button class="social-icon">in</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+      <div class="slider-container">
+        <div class="slide active-slide" id="slide1">
+            <div class="overlay"></div>
+            <div class="content">
+                      <p>Join the Ultimate Online Gaming Tournament!</p>
+                    <p>Compete with top players, win exciting prizes and showcase your skills.Register now and secure your spot!</p>
+                <button class="register-button button-pos-1">Register Now</button>
+            </div>
+        </div>
+
+        <div class="slide" id="slide2">
+            <div class="overlay"></div>
+            <div class="content">
+    <p>Join the most exciting tournaments from anywhere in the world. </p>
+                    <p>From causal competetions to championship-level events,find your tournament and register in few clicks.
+                <button class="register-button button-pos-2">Register Now</button>
+            </div>
+        </div>
+
+        <button class="nav-button prev-button"></button>
+        <button class="nav-button next-button"></button>
+    </div>
+    <div class="containers">
+ <div class="banner">
+            <h1>Find the Right Tournament for You</h1>
+        <p>Browse by category, skill level, or region. Whether you're into gaming, sports, or academics—we have something for everyone.</p>
+ </div>
+ <main class="categories-grid">
+    
+        <div class="category-card">
+            <h2>Sports</h2>
+            <img src="images/chess.jpeg" alt="Chess game">
+            <button>Enter Sports Zone</button>
+        </div>
+
+        <div class="category-card">
+            <h2>Quiz & Academics</h2>
+            <img src="images/download (2).jpeg" alt="Person thinking with chalk drawing">
+            <button>Challenge Your Mind</button>
+        </div>
+
+        <div class="category-card">
+            <h2>Creative Challenges</h2>
+            <img src="images/Google I_O_ Helping Developers Push Technological Boundaries.jpeg" alt="People building with creative blocks">
+            <button>Show Your Creativity</button>
+        </div>
+
+        <div class="category-card">
+            <h2>Racing Games</h2>
+            <img src="images/race.png" alt="Racing cars on a track">
+            <button>Race to Victory</button>
+        </div>
+    </main>
+    </div>  
+     <div class="container">
+        <div class="rewards-text">
+            <h2>Rewards</h2>
+            <p><strong>1st Place Champion:</strong></p>
+            <p>Reward: Rs.20,000 Cash Prize + Trophy</p>
+            <p>Bonus: Exclusive Gold Badge on Profile</p>
+            <p>Tagline: "Crowned Champion of the Arena"</p>
+
+            <p><strong>2nd Place Champion:</strong></p>
+            <p>Reward: Rs.10,000 Cash + Silver Medal</p>
+            <p>Bonus: Exclusive Gold Badge on Profile</p>
+            <p>Tagline: "Crowned Champion of the Arena"</p>
+
+            <p><strong>3rd Place Champion:</strong></p>
+            <p>Reward: Rs.5,000 Cash Prize + Trophy</p>
+            <p>Bonus: Exclusive Gold Badge on Profile</p>
+            <p>Tagline: "Crowned Champion of the Arena"</p>
+        </div>
+
+    <div class="slider-containers">
+        <!-- Slide 1 -->
+        <div class="mySlides fade" style="background-color: purple;">
+            <img src="images/Personalised_Mini_Star_Trophy_1st_Place_Gold_10cm-removebg-preview.png"alt="Trophy Slide 1">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <span class="overlay-icon">🥇</span>
+                    <h3>1st Place-Rs.20,000+Trophy</h3>
+                    <p>Exclusive Champion Badge + Cash Price.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="mySlides fade" style="background-color: darkblue;">
+            <img src="images/Trophäe_für_den_2__Platz_-_personalisierte_Gravur-removebg-preview.png" alt="Trophy Slide 2">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <span class="overlay-icon">🥈</span>
+                    <h3>2nd Place-Rs.10,000+Trophy</h3>
+                    <p>Exclusive Champion Badge + Cash Price.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="mySlides fade" style="background-color: maroon;">
+            <img src="images/3rd_Place_Award_Trophy_-_Personalized_Engraving-removebg-preview.png" alt="Trophy Slide 3">
+            <div class="overlay">
+                <div class="overlay-content">
+                    <span class="overlay-icon">🥉</span>
+                    <h3>3rd Place-Rs.5000 +Trophy</h3>
+                    <p>Exclusive Champion Badge + Cash Price.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation Arrows (Optional, but good for manual control) -->
+        <a class="prev" onclick="plusSlides(-1)"></a>
+        <a class="next" onclick="plusSlides(1)"></a>
+    </div>
+
+    <!-- Dots/Indicators (Optional) -->
+    <div style="text-align:center; margin-top: 10px;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+    
+</div> 
+<div class="rewards-container">
+        <div class="reward-card">
+            <div class="card-image">
+                <img src="images/Top ten premio al mejor podio con estrella _ Vector Gratis.jpeg" alt="Top 10 Finalists Badge">
+            </div>
+            <h3 class="card-title">Top 10 Finalists</h3>
+            <p class="card-reward">Reward: Digital Certificate + Exclusive Badge</p>
+            <p class="card-bonus">Bonus: Mention on Hall of Fame Page</p>
+            <p class="card-tagline">Tagline: "Among the elite competitors"</p>
+        </div>
+
+        <div class="reward-card">
+            <div class="card-image">
+                <img src="images/Crown Awards MVP Trophy - 6_ Gold Star MVP Recognition Trophies.jpeg" alt="MVP Trophy">
+            </div>
+            <h3 class="card-title">MVP of the Tournament</h3>
+            <p class="card-reward">Reward: Special In-Game Item or Boost</p>
+            <p class="card-bonus">Bonus: Profile Highlight</p>
+            <p class="card-tagline">Tagline: "Most Valuable Player of the week"</p>
+        </div>
+
+        <div class="reward-card">
+            <div class="card-image">
+                <img src="images/LiveGoodTour.jpeg" alt="Random Draw Trophy">
+            </div>
+            <h3 class="card-title">Random Draw Winners</h3>
+            <p class="card-reward">Reward: Swag Pack (T-shirt, Stickers, Mousepad)</p>
+            <p class="card-bonus">Bonus: Entry into exclusive mini-tournament</p>
+            <p class="card-tagline">Tagline: "Because luck favors the bold"</p>
+        </div>
+
+        <div class="reward-card">
+            <div class="card-image">
+                <img src="images/Employee Service Awards, Recognition Programs, Gifts Ideas Canada.jpeg" alt="Participation Certificate">
+            </div>
+            <h3 class="card-title">Participation Rewards</h3>
+            <p class="card-reward">Reward: Official Participation Certificate (Downloadable)</p>
+            <p class="card-bonus">Bonus: 10 Loyalty Points</p>
+            <p class="card-tagline">Tagline: "Every competitor counts"</p>
+        </div>
+    </div>
+     <div class="page-container">
+        <h1>Chess Tournament Champions - 2024</h1>
+        <p>Meet the minds that ruled the board last year in our biggest chess tournaments!</p>
+
+        <div class="champion-profiles">
+            <div class="champion-card">
+                <img src="images/ViSaEp1lPX5Pekxr4LJo.webp" alt="Gukesh Dommaraju Profile">
+                <div class="champion-info">
+                    <h2>Gukesh Dommaraju</h2>
+                    <p>FIDE Rating: 2787 | Age: 18</p>
+                    <h3>Achievements:</h3>
+                    <ul>
+                        <li>Winner of the 2024 Candidates Tournament.</li>
+                        <li>Reigning World Chess Champion (2024), youngest in history at 18 years and 195 days.</li>
+                        <li>Known for exceptional calculation skills and composure under pressure.</li>
+                        <li>Gold medalist at the 2024 Chess Olympiad.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="champion-card" style="text-align: end;align-items: end;margin-right: 10%;">
+                <img src="images/th.jpeg" alt="Arjun Erigaisi Profile">
+                <div class="champion-info">
+                    <h2>Arjun Erigaisi</h2>
+                    <p>FIDE Rating: 2782 | Age: 21</p>
+                    <h3>Achievements:</h3>
+                    <ul>
+                        <li>Ranked world number 4 as of April 2024.</li>
+                        <li>Notable victories in our League.</li>
+                        <li>Consistent top-tier performances in international tournaments.</li>
+                        <li>Strong performances in the Superbet Chess Classic.</li>
+                        <li>Defeated top players like Nodirbek Abdusattorov.</li>
+                        <li>Recognized as one of the most promising young talents globally.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="champion-card">
+                <img src="images/th (1).jpeg" alt="Praggnanandhaa Profile">
+                <div class="champion-info">
+                    <h2>Praggnanandhaa</h2>
+                    <p>FIDE Rating: 2758 | Age: 19</p>
+                    <h3>Achievements:</h3>
+                    <ul>
+                        <li>Ranked world number 4 as of April 2024.</li>
+                        <li>Notable victories in our League.</li>
+                        <li>Consistent top-tier performances in international tournaments.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+       
+    </div>
+     <div class="banner">
+         <center>   <h1>Featured Tournaments</h1>
+        <p>Compete in the Best.Rise to the Top.</p></center>
+ </div>
+   <div class="slider-container2">
+        <!-- Image Slider on the left -->
+        <div class="image-slider">
+            <div class="slides">
+                <img src="images/india.jpeg" alt="Image 1">
+                <img src="images/chess.jpeg" alt="Image 2">
+                <img src="images/out-full2-min.gif" alt="Image 3">
+                <img src="images/Marathon Pictures _ Freepik.jpeg">
+            </div>
+        </div>
+
+        <!-- Content Area on the right -->
+        <div class="content-area">
+            <h2 id="slide-title"></h2>
+            <p><strong>Type:</strong> <span id="slide-type"></span></p>
+            <p><strong>Date:</strong> <span id="slide-date"></span></p>
+            <p><strong>Eligibility:</strong> <span id="slide-eligibility"></span></p>
+            <p><strong>Rewards:</strong> <span id="slide-rewards"></span></p>
+            <p><strong>Why Join:</strong> <span id="slide-why-join"></span></p>
+            <p id="slide-description" class="hidden-description"></p> <!-- Keep this if you want an extra description field, otherwise remove -->
+
+            <div class="navigation-buttons">
+                <button id="prevBtn">Register</button>
+                <button id="nextBtn" style="background-color:#fff;"></button>
+            </div>
+        </div>
+    </div>
+    <footer class="site-footer">
+        <div class="footer-sections">
+            <div class="footer-section">
+              <img src="images/footer.png" alt="Funner Events Logo" class="logo" width="200px" style="margin-left: 0;">  
+            </div>
+            <div class="footer-section" style="line-height: 30px;">
+
+                <ul>
+                    <li style="text-decoration: underline;">QUICK ACCESS</li>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="index.html">TOURNAMENTS</a></li>
+                    <li><a href="#"  id="pricingLink">PRICING</a></li>
+                    <li><a href="about.html">ABOUT US</a></li>
+                   
+                </ul>
+            </div>
+
+            <div class="footer-section" style="line-height: 30px;">
+                
+                <ul>
+                    <li style="text-decoration: underline;">STAY CONNECTED</li>
+                    <li><a href="index.html">TOURNAMENTS</a></li>
+                    <li><a href="sports.html">SPORTS</a></li>
+                    <li><a href="profile.html">PROFILE</a></li>
+                 
+                </ul>
+            </div>
+       
+            <div class="footer-section" style="line-height: 30px;">
+              <p style="text-decoration: underline;">CONTACT US</p>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Gaming Arena Blvd,City,State,Zip Code,Country</p>
+                <p><i class="fas fa-phone"></i>+91 XXXXXXXXXX</p>
+                <p><i class="fas fa-envelope"></i> Support@Yourpartystore.Com</p>
+                <p>Follow With US</p>
+           
+
+        
+               
+                <div class="social-icons">
+                    <a href="#" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="social-icon linkedin"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="social-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="social-icon google"><i class="fab fa-google"></i></a>
+
+               
+            </div>
+            </div>
+        </div>
+
+    </footer>
+    <script>
+     document.addEventListener('DOMContentLoaded', function() {
+    const pricingLink = document.getElementById('pricingLink');
+    const pricingOverlay = document.getElementById('pricingOverlay');
+
+    pricingLink.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+
+        // Toggle the 'show' class to control visibility and trigger animation
+        pricingOverlay.classList.toggle('show');
+    });
+
+    // Optional: Close the overlay when clicking outside the message box
+    pricingOverlay.addEventListener('click', function(event) {
+        if (event.target === pricingOverlay) { // Check if the click was directly on the overlay, not its child
+            pricingOverlay.classList.remove('show');
+        }
+    });
+});
+document.addEventListener('DOMContentLoaded', () => {
+    const loginBtn = document.getElementById('loginBtn');
+    const loginOverlay = document.getElementById('loginOverlay');
+    const closeLoginBtn = document.getElementById('closeLogin');
+    const tabLinks = document.querySelectorAll('.tab-link');
+    const formSections = document.querySelectorAll('.form-section');
+
+    // Open the login overlay with animation
+    loginBtn.addEventListener('click', () => {
+        loginOverlay.classList.add('active');
+        // Ensure login tab and form are active by default when opening
+        showTab('login');
+    });
+
+    // Close the login overlay with animation
+    closeLoginBtn.addEventListener('click', () => {
+        loginOverlay.classList.remove('active');
+    });
+
+    // Close overlay if clicked outside the popup (optional)
+    loginOverlay.addEventListener('click', (event) => {
+        if (event.target === loginOverlay) {
+            loginOverlay.classList.remove('active');
+        }
+    });
+
+    // Tab switching logic
+    tabLinks.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const targetTab = tab.dataset.tab;
+            showTab(targetTab);
+        });
+    });
+
+    function showTab(targetTab) {
+        // Deactivate all tabs and hide all form sections
+        tabLinks.forEach(tab => tab.classList.remove('active'));
+        formSections.forEach(form => form.classList.remove('active'));
+
+        // Activate the clicked tab
+        document.querySelector(`.tab-link[data-tab="${targetTab}"]`).classList.add('active');
+
+        // Show the corresponding form section
+        document.getElementById(`${targetTab}Form`).classList.add('active');
+    }
+
+    // Initialize to show login tab/form when page loads (if overlay were visible initially)
+    // If you only want it to happen when the overlay is opened, keep it in loginBtn.addEventListener
+    // showTab('login'); // Uncomment if you want default tab active even before overlay open
+});
+  document.addEventListener('DOMContentLoaded', () => {
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+    let currentSlideIndex = 0;
+    let autoSlideInterval; // Variable to hold our interval ID
+    const autoChangeDelay = 2000; // 5 seconds delay for auto-change
+
+    function showSlide(index) {
+        // Ensure index wraps around if it goes out of bounds
+        currentSlideIndex = (index + slides.length) % slides.length;
+
+        slides.forEach((slide, i) => {
+            slide.classList.remove('active-slide');
+            // Reset button positions for all slides before applying new ones
+            const button = slide.querySelector('.register-button');
+            if (button) {
+                button.style.left = '';
+                button.style.right = '';
+                button.style.bottom = '';
+                button.style.transform = 'translateX(-50%)'; // Reset transform to default
+            }
+        });
+
+        const activeSlide = slides[currentSlideIndex];
+        if (activeSlide) {
+            activeSlide.classList.add('active-slide');
+            // Apply specific button position for the active slide
+            const activeSlideButton = activeSlide.querySelector('.register-button');
+            if (activeSlideButton) {
+                if (currentSlideIndex === 0) { // Position for slide 1
+                    activeSlideButton.style.left = '50%'; // Center
+                    activeSlideButton.style.bottom = '50px';
+                    activeSlideButton.style.right = '';
+                    activeSlideButton.style.transform = 'translateX(-50%)';
+                } else if (currentSlideIndex === 1) { // Position for slide 2
+                    activeSlideButton.style.right = '50%'; // Center
+                    activeSlideButton.style.bottom = '80px';
+                    activeSlideButton.style.left = '';
+                    activeSlideButton.style.transform = 'translateX(50%)'; // Adjusted for right positioning
+                }
+            }
+        }
+    }
+
+    function nextSlide() {
+        showSlide(currentSlideIndex + 1);
+    }
+
+    function prevSlide() {
+        showSlide(currentSlideIndex - 1);
+    }
+
+    function startAutoSlide() {
+        // Clear any existing interval to prevent multiple intervals running
+        clearInterval(autoSlideInterval);
+        autoSlideInterval = setInterval(nextSlide, autoChangeDelay);
+    }
+
+    function resetAutoSlide() {
+        // When a user interacts, stop the current auto-slide and restart it
+        clearInterval(autoSlideInterval);
+        startAutoSlide();
+    }
+
+    // Event Listeners for navigation buttons
+    nextButton.addEventListener('click', () => {
+        nextSlide();
+        resetAutoSlide(); // Reset auto-change on manual navigation
+    });
+
+    prevButton.addEventListener('click', () => {
+        prevSlide();
+        resetAutoSlide(); // Reset auto-change on manual navigation
+    });
+
+    // Start auto-slide when the page loads
+    startAutoSlide();
+
+    // Initial display of the first slide
+    showSlide(currentSlideIndex);
+});
+ let slideIndex = 0;
+let slideInterval; // To store the interval ID for clearing
+
+function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+
+    // Hide all slides and remove active class from dots
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+
+    // Increment slideIndex and reset if it exceeds the number of slides
+    slideIndex++;
+    if (slideIndex > slides.length) { slideIndex = 1 }
+
+    // Display the current slide and mark its dot as active
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+
+    // Clear previous interval and set a new one for automatic sliding
+    clearInterval(slideInterval); // Stop any existing auto-slide
+    slideInterval = setTimeout(showSlides, 3000); // Change image every 3 seconds (adjust as needed)
+}
+
+// Function to navigate slides with arrows
+function plusSlides(n) {
+    clearTimeout(slideInterval); // Stop auto-slide when manual navigation occurs
+    slideIndex += n - 1; // Adjust index based on current showSlides logic
+    if (slideIndex < 0) { // Wrap around if going back from first slide
+        slideIndex = document.getElementsByClassName("mySlides").length - 1;
+    } else if (slideIndex >= document.getElementsByClassName("mySlides").length) { // Wrap around if going forward from last slide
+        slideIndex = 0;
+    }
+    showSlides(); // Call showSlides to update display
+}
+
+// Function to navigate to a specific slide using dots
+function currentSlide(n) {
+    clearTimeout(slideInterval); // Stop auto-slide when manual navigation occurs
+    slideIndex = n - 1; // Adjust index for 0-based array
+    showSlides(); // Call showSlides to update display
+}
+
+// Initial call to start the slideshow
+document.addEventListener('DOMContentLoaded', showSlides);
+
+
+        const slides = document.querySelector('.slides');
+const slideImages = document.querySelectorAll('.slides img');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+// Get references to all content elements
+const slideTitle = document.getElementById('slide-title');
+const slideType = document.getElementById('slide-type');
+const slideDate = document.getElementById('slide-date');
+const slideEligibility = document.getElementById('slide-eligibility');
+const slideRewards = document.getElementById('slide-rewards');
+const slideWhyJoin = document.getElementById('slide-why-join');
+// If you kept the general description:
+// const slideDescription = document.getElementById('slide-description');
+
+
+let currentSlideIndex = 0;
+let slideIntervals;
+
+// Content for each slide, now with detailed properties
+const slideContent = [
+    {
+        title: 'All-India Quiz Challenge',
+        type: 'Acadsmic & Triva',
+        date: 'June 15, 2025',
+        eligibility: 'Open to all skill levels',
+        rewards: 'cash rewards + Certificate + quizz master',
+        whyJoin: 'Compete with top-rated players and earn recognition',
+        // description: 'Detailed information about the Blitz Chess Masters tournament.' // Uncomment if you use this field
+    },
+    {
+        title: 'Biltz chess Master 2025',
+        type: 'Online | solo | Rapid Format',
+        date: 'July 15, 2025',
+        eligibility: 'open to all skill levels',
+        rewards: '₹15,000 Cash Prize + Digital Trophy + FIDE Points',
+        whyJoin: 'Compete with top-rated players and earn recogination',
+        // description: 'A high-stakes team tournament for experienced chess enthusiasts.'
+    },
+    {
+        title: 'Solo Skill Game Champion Ship',
+        type: 'Online | Solo | Rapid Format',
+        date: 'August 10, 2025',
+        eligibility: 'Open to all',
+        rewards: 'Weekly Winner+Certificate+ Skill Badges',
+        whyJoin: 'Develop your skills and compete with peers',
+        // description: 'A friendly competition designed for young, aspiring chess players.'
+    }
+];
+
+function updateSlider() {
+    // Move the slides (image area)
+    slides.style.transform = `translateX(-${currentSlideIndex * 100}%)`;
+
+    // Update the content (content area)
+    const currentContent = slideContent[currentSlideIndex];
+    slideTitle.textContent = currentContent.title;
+    slideType.textContent = currentContent.type;
+    slideDate.textContent = currentContent.date;
+    slideEligibility.textContent = currentContent.eligibility;
+    slideRewards.textContent = currentContent.rewards;
+    slideWhyJoin.textContent = currentContent.whyJoin;
+    // If you kept the general description:
+    // slideDescription.textContent = currentContent.description;
+}
+
+function showNextSlide() {
+    currentSlideIndex = (currentSlideIndex + 1) % slideImages.length;
+    updateSlider();
+}
+
+function showPrevSlide() {
+    currentSlideIndex = (currentSlideIndex - 1 + slideImages.length) % slideImages.length;
+    updateSlider();
+}
+
+// Function to start the automatic slideshow
+function startAutoSlide() {
+    clearInterval(slideIntervals); // Clear any existing interval
+    slideIntervals = setInterval(showNextSlide, 4000); // Change slide every 4 seconds
+}
+
+// Event listeners for navigation buttons
+nextBtn.addEventListener('click', () => {
+    showNextSlide();
+    startAutoSlide(); // Restart interval on manual navigation
+});
+
+prevBtn.addEventListener('click', () => {
+    showPrevSlide();
+    startAutoSlide(); // Restart interval on manual navigation
+});
+
+// Initial display and start auto-sliding
+updateSlider();
+startAutoSlide();
+</script>   
+</body>
+</html>
